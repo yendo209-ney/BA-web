@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App quản lý lịch trình và chi tiêu khi đi du lịch nhóm</title>
+    
+    <!-- Nhúng thư viện bpmn-js để đọc file BPMN thô -->
+    <link rel="stylesheet" href="https://unpkg.com" />
+    <link rel="stylesheet" href="https://unpkg.com" />
+    <script src="https://unpkg.com"></script>
+
+    <style>
+        /* Cấu hình giao diện chung */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #111;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #0070f3;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #0070f3;
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 1.6rem;
+        }
+        p {
+            white-space: pre-line;
+            font-size: 1.05rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        iframe {
+            width: 100%;
+            height: 550px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        /* Khung hiển thị BPMN */
+        .bpmn-container {
+            width: 100%;
+            height: 450px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        /* CSS Layout Phần 1: Ảnh trái, Text phải */
+        .grid-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* CSS Layout Phần 2: 3 cột từ trái sang phải */
+        .grid-three-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .interview-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .interview-card img {
+            max-height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        /* CSS Layout Phần 5 & 6: Dạng bảng định dạng chuẩn */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #111;
+            font-weight: bold;
+        }
+        tr:nth-child(even) { background-color: #fafafa; }
+
+        /* Hỗ trợ hiển thị trên điện thoại (chuyển về 1 cột) */
+        @media (max-width: 768px) {
+            .grid-two-columns, .grid-three-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>BÁO CÁO PHÂN TÍCH DỰ ÁN</h1>
+
+        <!-- 1. MARKET CONTEXT -->
+        <section>
+            <h2>1. Market Context</h2>
+            <div class="grid-two-columns">
+                <div>
+                    <img src="market-chart.png" alt="Biểu đồ Market Context">
+                </div>
+                <div>
+                    <p>Điền nội dung văn bản phân tích bối cảnh thị trường (Market Context) của bạn tại đây. Đoạn văn này sẽ tự động nằm ở bên phải của ảnh biểu đồ.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. USER INTERVIEW -->
+        <section>
+            <h2>2. User Interview</h2>
+            <div class="grid-three-columns">
+                <!-- Người 1 -->
+                <div class="interview-card">
+                    <img src="user1.png" alt="Người phỏng vấn 1">
+                    <h3>Nguyễn Văn A</h3>
+                    <p style="text-align: left; font-size: 0.95rem;">Nội dung phản hồi, ý kiến hoặc thông tin thu thập được từ người phỏng vấn thứ nhất.</p>
+                </div>
+                <!-- Người 2 -->
+                <div class="interview-card">
+                    <img src="user2.png" alt="Người phỏng vấn 2">
+                    <h3>Trần Thị B</h3>
+                    <p style="text-align: left; font-size: 0.95rem;">Nội dung phản hồi, ý kiến hoặc thông tin thu thập được từ người phỏng vấn thứ hai.</p>
+                </div>
+                <!-- Người 3 -->
+                <div class="interview-card">
+                    <img src="user3.png" alt="Người phỏng vấn 3">
+                    <h3>Phạm Văn C</h3>
+                    <p style="text-align: left; font-size: 0.95rem;">Nội dung phản hồi, ý kiến hoặc thông tin thu thập được từ người phỏng vấn thứ ba.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. USER PERSONA -->
+        <section>
+            <h2>3. User Persona</h2>
+            <div class="grid-two-columns">
+                <div>
+                    <img src="persona.png" alt="User Persona">
+                </div>
+                <div>
+                    <p><strong>Họ và tên:</strong> Khách hàng mục tiêu A
+                    <strong>Độ tuổi:</strong> 25 - 30
+                    
+                    Điền các thông tin chi tiết về đặc điểm hành vi, tính cách, mục tiêu và nỗi đau (pain points) của User Persona tại đây.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BPMN AS-IS -->
+        <section>
+            <h2>4. BPMN As-Is</h2>
+            <div id="bpmn-asis" class="bpmn-container"></div>
+        </section>
+
+        <!-- 5. PROBLEM STATEMENT -->
+        <section>
+            <h2>5. Problem Statement</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Vấn đề (Problem)</th>
+                        <th>Chi tiết và Tác động (Details & Impact)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Vấn đề 1</b></td>
+                        <td>Mô tả chi tiết tác động của vấn đề thứ nhất đối với hệ thống hoặc người dùng tại ô này.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Vấn đề 2</b></td>
+                        <td>Mô tả chi tiết tác động của vấn đề thứ hai đối với hệ thống hoặc người dùng tại ô này.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. PROBLEM-SOLUTION FIT -->
+        <section>
+            <h2>6. Problem-Solution Fit</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vấn đề định vị</th>
+                        <th>Giải pháp đề xuất (Solution)</th>
+                        <th>Giá trị mang lại (Value)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vấn đề tồn tại A</td>
+                        <td>Giải pháp công nghệ hoặc quy trình xử lý A</td>
+                        <td>Giúp tiết kiệm thời gian và tối ưu chi phí vận hành.</td>
+                    </tr>
+                    <tr>
+                        <td>Vấn đề tồn tại B</td>
+                        <td>Giải pháp công nghệ hoặc quy trình xử lý B</td>
+                        <td>Tăng trải nghiệm người dùng, giảm tỷ lệ rời bỏ app.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 7. USER STORY MAP -->
+        <section>
+            <h2>7. User Story Map</h2>
+            <!-- DÁN LINK NHÚNG EMBED FIGMA CỦA USER STORY MAP VÀO THẺ SRC PHÍA DƯỚI -->
+            <iframe src="https://figma.com" allowfullscreen></iframe>
+        </section>
+
+        <!-- 8. BPMN TO-BE -->
+        <section>
+            <h2>8. BPMN To-Be</h2>
+            <div id="bpmn-tobe" class="bpmn-container"></div>
+        </section>
+
+        <!-- 9. UI MOCKUP -->
+        <section>
+            <h2>9. UI Mockup</h2>
+            <!-- DÁN LINK NHÚNG EMBED FIGMA CỦA BẠN VÀO THẺ SRC PHÍA DƯỚI -->
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="550" src="https://embed.figma.com/design/78XDI5DMQ4zXTx193nnMKM/TravelLoop?embed-host=share" allowfullscreen></iframe>
+        </section>
+
+        <!-- 10. ERD -->
+        <section>
+            <h2>10. ERD (Entity Relationship Diagram)</h2>
+            <!-- DÁN LINK IFRAME NHÚNG SƠ ĐỒ ERD CỦA BẠN VÀO THẺ SRC PHÍA DƯỚI (Ví dụ link từ dbdiagram.io, dbeaver...) -->
+            <iframe width="100%" height="500px" style="box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); border-radius:15px;" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Embedded DrawSQL IFrame" frameborder="0" src="https://drawsql.app/teams/thuuuu/diagrams/thu/embed"></iframe>
+        </section>
+
+    </div>
+
+    <!-- SCRIPT TỰ ĐỘNG RENDERING 3 FILE BPMN THÔ -->
+    <script>
+        // Cấu hình chính xác tên file đuôi .bpmn tương ứng của bạn nằm trong thư mục
+        const filesBPMN = {
+            'asis': 'bpmn as-is.bpmn',
+            'tobe': 'bpmn to-be lịch trình.bpmn',
+ 	    'tobe': 'bpmn to-be chi tiêu.bpmn'
+        };
+
+        // Hàm xử lý đọc file và vẽ sơ đồ độc lập cho từng vùng chứa
+        function renderBPMN(containerId, fileUrl) {
+            const viewer = new BpmnJS({ container: '#' + containerId });
+            fetch(fileUrl)
+                .then(res => {
+                    if (!res.ok) throw new Error('Không tìm thấy file: ' + fileUrl);
+                    return res.text();
+                })
+                .then(xml => viewer.importXML(xml))
