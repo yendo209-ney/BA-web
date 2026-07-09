@@ -140,7 +140,6 @@
   .person{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column}
   .person .body{display:flex;flex-direction:column;flex:1;padding:20px}
   .person .quote{margin-top:auto}
-  .person .avatar{height:160px;background:#eef6f6;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;border-bottom:1px solid var(--line)}
   .person:hover{transform:translateY(-4px);box-shadow:0 16px 36px -20px rgba(43,133,146,.3)}
   .person h3{font-size:18px;color:var(--navy)}
   .person .role{font-size:11px;color:var(--sun);font-weight:700;margin:4px 0 12px;letter-spacing:.04em;text-transform:uppercase}
@@ -433,13 +432,13 @@
     <div class="sec-head reveal"><span class="num">02</span><h2>User Interview</h2></div>
     <div class="people">
       <div class="person reveal">
-        <div class="avatar"><span class="mono">interview-1.jpg</span></div>
+        <img src="interview-1.jpg" alt="Đỗ Thị Bích Liên" style="width:100%; height:160px; object-fit:cover; border-bottom:1px solid var(--line);">
         <div class="body">
           <h3>Đỗ Thị Bích Liên</h3><div class="role">Leader · Trưởng nhóm gánh vác</div>
           <div class="pblock"><div class="lab">Thói quen</div><p>Lên lịch trình, tổng hợp chi tiêu trên Google Sheets; dùng Zalo thông báo chung.</p></div>
           <div class="pblock"><div class="lab">Nỗi đau</div><ul>
             <li>Tốn nhiều giờ nhập liệu thủ công trên màn hình điện thoại bất tiện.</li>
-            <li>Spam chat nhóm liên tục khiến trôi tin nhắn lịch trình quan trọng.</li>
+            <li>Spam chat nhóm liên tục khiến trôi tin nhắn lịch trình quan trình.</li>
             <li>Áp lực rà lịch sử chuyển khoản cuối chuyến để chia tiền chính xác.</li>
           </ul></div>
           <p class="quote">"Tôi muốn một chỗ tự gom và lo hết, đỡ phải tính tay từng cái bill lẻ mệt mỏi."</p>
@@ -447,7 +446,7 @@
       </div>
 
       <div class="person reveal">
-        <div class="avatar"><span class="mono">interview-2.jpg</span></div>
+        <img src="interview-2.jpg" alt="Nguyễn Minh" style="width:100%; height:160px; object-fit:cover; border-bottom:1px solid var(--line);">
         <div class="body">
           <h3>Nguyễn Minh</h3><div class="role">Tech-savvy Leader</div>
           <div class="pblock"><div class="lab">Thói quen</div><p>Lập ngân sách qua Excel; dùng Splitwise để nhập tạm các khoản nợ lúc đi đường.</p></div>
@@ -460,7 +459,7 @@
       </div>
 
       <div class="person reveal">
-        <div class="avatar"><span class="mono">interview-3.jpg</span></div>
+        <img src="interview-3.jpg" alt="Lê Hạ Lan" style="width:100%; height:160px; object-fit:cover; border-bottom:1px solid var(--line);">
         <div class="body">
           <h3>Lê Hạ Lan</h3><div class="role">Passive Follower</div>
           <div class="pblock"><div class="lab">Thói quen</div><p>Nhận thông tin thụ động từ trưởng nhóm, chuyển khoản cọc khi được nhắc tên.</p></div>
@@ -482,7 +481,9 @@
   <div class="wrap">
     <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
     <div class="persona">
-      <div class="reveal"><div class="ph" style="min-height:380px"><div class="ph-t">Ảnh Persona</div>Thay bằng ảnh đại diện của bạn<span class="mono">persona.jpg / persona.png</span></div></div>
+      <div class="reveal">
+        <img src="persona.jpg" alt="Nguyễn Minh Anh" style="width:100%; border-radius:16px; border:1px solid var(--line); display:block; box-shadow:0 8px 24px rgba(43,133,146,0.03)">
+      </div>
       <div class="facts reveal">
         <h3>Nguyễn Minh Anh</h3><div class="tagline">Người tổ chức du lịch nhóm · 28 tuổi · Nhân viên văn phòng</div>
         <div class="pg">
@@ -565,7 +566,7 @@
   </div>
 </section>
 
-<!-- 8: BPMN TO-BE TÍCH HỢP ĐƯỜNG NÉT ĐỨT & CÁC ICON DU LỊCH PHÍA NGOÀI -->
+<!-- 8: BPMN TO-BE -->
 <section class="block alt" id="flow">
   <svg class="section-connector" viewBox="0 0 2 100" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="100" class="sc-down"/></svg>
   <div class="wrap">
@@ -650,7 +651,7 @@
   <svg class="ts-ic" style="animation-delay:-1.5s"><use href="#ic-camera"/></svg>
 </div>
 
-<!-- FOOTER NỀN XANH ĐẬM + LOGO TRẮNG + XE SCOOTER CHẠY TRÊN NÉT ĐỨT -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-road-wrap" aria-hidden="true">
     <svg class="footer-scooter"><use href="#ic-scooter"/></svg>
@@ -667,7 +668,6 @@
       Giải pháp toàn diện tối ưu hóa trải nghiệm du lịch tập thể, xóa bỏ hoàn toàn rào cản tính toán tài chính và gắn kết hội bạn thân trên mọi cung đường.
     </p>
 
-    <!-- Các icon phát sáng nhẹ tỏa xung quanh khi ở footer -->
     <div class="footer-decorations" aria-hidden="true">
       <svg class="glow-soft"><use href="#ic-suitcase"/></svg>
       <svg class="glow-soft" style="animation-delay:-1.2s"><use href="#ic-camera"/></svg>
