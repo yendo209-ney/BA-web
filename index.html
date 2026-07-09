@@ -158,7 +158,10 @@
   .hint code{background:var(--sun-soft);padding:2px 7px;border-radius:5px;color:var(--navy)}
 
   .bg-decor{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    opacity:.22;z-index:0;pointer-events:none;filter:saturate(.7)}
+    opacity:.18;z-index:0;pointer-events:none;filter:blur(16px) saturate(.5);
+    transform:scale(1.1)}
+  .bg-wash{position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(246,251,251,.6)}
+  section.block.alt .bg-wash{background:rgba(240,249,248,.6)}
   section.block>.wrap{position:relative;z-index:1}
   .btn-proto{display:inline-block;border:1.5px solid var(--mint);color:var(--mint-deep);padding:10px 22px;
     border-radius:100px;font-weight:600;font-size:14px;text-decoration:none;transition:background .18s}
@@ -261,6 +264,7 @@
 <!-- 1 -->
 <section class="block" id="market" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-market.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <svg class="corner-ic ci-1" aria-hidden="true"><use href="#ic-compass"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">01</span><h2>Market Context</h2></div>
@@ -273,6 +277,7 @@
 <!-- 2 -->
 <section class="block alt" id="interview" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-interview.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">02</span><h2>User Interview</h2></div>
   <div class="people">
@@ -316,6 +321,7 @@
 <!-- 3 -->
 <section class="block" id="persona" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-hero.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
   <div class="persona">
@@ -368,6 +374,7 @@
 <!-- 6 -->
 <section class="block alt" id="fit" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-fit.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">06</span><h2>Problem–Solution Fit</h2></div>
   <div class="tablecard reveal"><table class="fit">
@@ -383,6 +390,7 @@
 <!-- 7 -->
 <section class="block" id="storymap" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-storymap.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">07</span><h2>User Story Map</h2></div>
   <div class="embed reveal"><iframe title="User Story Map" src="https://embed.figma.com/board/ATUrCStKhNOfAw3meIBoa2/TravelLoop_User-Story-Map?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
@@ -398,6 +406,7 @@
 <!-- 9 -->
 <section class="block" id="mockup" style="position:relative;overflow:hidden">
   <img class="bg-decor" src="bg-mockup.png" alt="" aria-hidden="true">
+  <div class="bg-wash" aria-hidden="true"></div>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">09</span><h2>UI Mockup</h2></div>
 
