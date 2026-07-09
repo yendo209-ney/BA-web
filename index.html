@@ -260,7 +260,7 @@
 
 <!-- 1 -->
 <section class="block" id="market" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-market.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-market.png" alt="" aria-hidden="true">
   <svg class="corner-ic ci-1" aria-hidden="true"><use href="#ic-compass"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">01</span><h2>Market Context</h2></div>
@@ -272,7 +272,7 @@
 
 <!-- 2 -->
 <section class="block alt" id="interview" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-interview.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-interview.png" alt="" aria-hidden="true">
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">02</span><h2>User Interview</h2></div>
   <div class="people">
@@ -315,7 +315,7 @@
 
 <!-- 3 -->
 <section class="block" id="persona" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-hero.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-hero.png" alt="" aria-hidden="true">
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
   <div class="persona">
@@ -367,7 +367,7 @@
 
 <!-- 6 -->
 <section class="block alt" id="fit" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-fit.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-fit.png" alt="" aria-hidden="true">
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">06</span><h2>Problem–Solution Fit</h2></div>
   <div class="tablecard reveal"><table class="fit">
@@ -382,7 +382,7 @@
 
 <!-- 7 -->
 <section class="block" id="storymap" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-storymap.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-storymap.png" alt="" aria-hidden="true">
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">07</span><h2>User Story Map</h2></div>
   <div class="embed reveal"><iframe title="User Story Map" src="https://embed.figma.com/board/ATUrCStKhNOfAw3meIBoa2/TravelLoop_User-Story-Map?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
@@ -397,7 +397,7 @@
 
 <!-- 9 -->
 <section class="block" id="mockup" style="position:relative;overflow:hidden">
-  <img class="bg-decor" src="images/bg/bg-mockup.png" alt="" aria-hidden="true">
+  <img class="bg-decor" src="bg-mockup.png" alt="" aria-hidden="true">
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">09</span><h2>UI Mockup</h2></div>
 
@@ -432,16 +432,20 @@
       <tr><td class="mono">LICH_TRINH.MaLT → COMMENT.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều comment</td></tr>
       <tr><td class="mono">KHOAN_CHI.MaKC → COMMENT.MaKC</td><td>1–N</td><td>Một khoản chi có nhiều góp ý</td></tr>
       <tr><td class="mono">TAI_KHOAN.MaTK → COMMENT.MaTK</td><td>1–N</td><td>Một người viết nhiều comment</td></tr>
-      <tr><td class="mono">KHOAN_CHI.MaKC → CONG_NO.MaKC</td><td>1–N</td><td>Một khoản chi phát sinh nhiều công nợ</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK</td><td>1–N</td><td>Một người có nhiều khoản nợ</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → CONG_NO.MaKC</td><td>1–N</td><td>Một khoản chi phát sinh nhiều công nợ (nullable — null nếu nợ đã rút gọn/netting)</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK_no</td><td>1–N</td><td>Một người có nhiều khoản nợ (người phải trả)</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK_cho_no</td><td>1–N</td><td>Một người có nhiều khoản được nhận nợ (chủ nợ, dùng khi rút gọn nợ)</td></tr>
       <tr><td class="mono">CONG_NO.MaCN → NHAC_NO.MaCN</td><td>1–N</td><td>Một công nợ bị nhắc nhiều lần</td></tr>
       <tr><td class="mono">LICH_TRINH.MaLT → XAC_NHAN.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều lượt xác nhận</td></tr>
       <tr><td class="mono">TAI_KHOAN.MaTK → XAC_NHAN.MaTK</td><td>1–N</td><td>Một người xác nhận nhiều lần</td></tr>
       <tr><td class="mono">LICH_TRINH.MaLT → LINK_CHIA_SE.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều link chia sẻ</td></tr>
       <tr><td class="mono">TAI_KHOAN.MaTK → THONG_BAO.MaTK</td><td>1–N</td><td>Một người nhận nhiều thông báo</td></tr>
+      <tr><td class="mono">LICH_TRINH_MAU.MaMau → HOAT_DONG_MAU.MaMau</td><td>1–N</td><td>Một mẫu có nhiều hoạt động mẫu</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → LICH_TRINH_MAU.MaTK_tac_gia</td><td>1–N</td><td>Một người đăng nhiều mẫu (tác giả)</td></tr>
+      <tr><td class="mono">LICH_TRINH_MAU.MaMau → LICH_TRINH.MaMau_nguon</td><td>1–N</td><td>Một mẫu được dùng để tạo ra nhiều lịch trình (nullable — null nếu tự tạo, không dùng mẫu)</td></tr>
     </table>
   </div>
-  <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA).</p>
+  <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA). LICH_TRINH_MAU/HOAT_DONG_MAU là bảng snapshot tĩnh, tách biệt hoàn toàn khỏi thành viên/công nợ/comment thật để bảo vệ riêng tư khi công khai làm mẫu.</p>
 </div></section>
 
 <div class="travel-strip" aria-hidden="true">
