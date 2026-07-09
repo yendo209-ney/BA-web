@@ -6,7 +6,7 @@
 <title>TravelLoop — Lên lịch trình & quản lý chi tiêu du lịch nhóm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/bpmn-js@17.11.1/dist/bpmn-viewer.development.js"></script>
 <style>
   :root{
@@ -40,30 +40,13 @@
   @media(max-width:900px){nav ul{display:none}}
 
   /* HERO */
-  .hero{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden;
-    background:linear-gradient(165deg,#eafaf8 0%,#dff4f4 40%,#eef8ef 100%)}
-  .hero::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(70% 55% at 82% 12%,rgba(244,166,60,.16),transparent 60%),
-      radial-gradient(60% 50% at 8% 95%,rgba(94,198,200,.22),transparent 60%)}
-  .cloud{position:absolute;border-radius:50%;background:rgba(255,255,255,.6);filter:blur(6px)}
-  .hills{position:absolute;left:0;right:0;bottom:0;height:38%;z-index:1}
-  .hills svg{width:100%;height:100%;display:block}
-  .hero .wrap{position:relative;z-index:3;padding-top:120px;padding-bottom:130px;width:100%}
-  .hero h1{font-size:clamp(44px,8vw,96px);color:var(--navy);letter-spacing:-.03em;max-width:15ch;margin-top:20px}
-  .hero h1 em{font-style:italic;font-weight:500;color:var(--mint-deep)}
-  .hero .lead{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:540px;margin:26px 0 0}
-  .cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;border-radius:100px;
-    padding:14px 28px;transition:transform .18s,box-shadow .18s}
-  .btn.primary{background:linear-gradient(135deg,var(--mint2),var(--mint));color:#fff;
-    box-shadow:0 10px 26px -8px rgba(94,198,200,.75)}
-  .btn.primary:hover{transform:translateY(-2px)}
-  .btn.ghost{border:1.5px solid var(--mint);color:var(--mint-deep);background:rgba(255,255,255,.6)}
-  .btn.ghost:hover{background:#fff}
-  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:var(--mint-deep);
-    font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.8}
-  .scroll-cue .bar{width:1px;height:34px;background:linear-gradient(var(--mint-deep),transparent);animation:drop 1.8s infinite}
-  @keyframes drop{0%{opacity:0;transform:scaleY(.3)}50%{opacity:1}100%{opacity:0;transform:translateY(12px) scaleY(.3)}}
+  .hero{position:relative;width:100%;background:linear-gradient(165deg,#eafaf8 0%,#e8f5f4 100%);padding-top:72px}
+  .hero-img-wrap{display:block;position:relative;max-width:1440px;margin:0 auto}
+  .hero-img{width:100%;height:auto;display:block}
+  /* vùng bấm phủ lên 2 nút trong ảnh (theo tỉ lệ %) */
+  .hero-hit{position:absolute;cursor:pointer;z-index:10;display:block}
+  .hero-hit.hit-1{left:3.3%;top:76%;width:20.5%;height:9%}
+  .hero-hit.hit-2{left:24.5%;top:76%;width:19.5%;height:9%}
 
   .up{opacity:0;transform:translateY(26px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
   .up.d1{animation-delay:.05s}.up.d2{animation-delay:.18s}.up.d3{animation-delay:.32s}.up.d4{animation-delay:.46s}
@@ -102,11 +85,14 @@
   .ph .mono{font-size:11.5px;color:var(--mint-deep);margin-top:12px;word-break:break-all;background:var(--mint-soft);padding:5px 9px;border-radius:6px}
   img.shot{width:100%;border-radius:18px;border:1px solid var(--line);display:block}
 
-  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
   @media(max-width:520px){.people{grid-template-columns:1fr}}
-  .person{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .person{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+  .person .body{display:flex;flex-direction:column;flex:1}
+  .person .quote{margin-top:auto}
+  .person .avatar img{width:100%;height:230px;object-fit:cover;display:block}
   .person:hover{transform:translateY(-5px);box-shadow:0 22px 46px -28px rgba(43,133,146,.5)}
-  .person .avatar{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--mint-soft),var(--sun-soft));display:flex;align-items:center;justify-content:center;color:var(--mint-deep);font-weight:500;font-size:12px}
+  .person .avatar{width:100%;height:230px;overflow:hidden;background:linear-gradient(135deg,var(--mint-soft),var(--sun-soft));display:flex;align-items:center;justify-content:center;color:var(--mint-deep);font-weight:500;font-size:12px}
   .person .body{padding:16px}
   .person h3{font-size:17px;color:var(--navy)}
   .person .role{font-size:10.5px;color:var(--sun);font-weight:700;margin:4px 0 10px;letter-spacing:.04em;text-transform:uppercase}
@@ -150,15 +136,16 @@
   .bpmn-box{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 16px 40px -32px rgba(43,133,146,.55)}
   .bpmn-box .cap{padding:14px 20px;border-bottom:1px solid var(--line);font-size:13px;font-weight:600;display:flex;justify-content:space-between;align-items:center;background:#f4fbfa}
   .bpmn-box .cap .mono{color:var(--mint-deep)}
-  .bpmn-canvas{width:100%;height:560px;background:
-    linear-gradient(90deg,rgba(220,236,236,.6) 1px,transparent 1px) 0 0/24px 24px,
-    linear-gradient(rgba(220,236,236,.6) 1px,transparent 1px) 0 0/24px 24px,#fff}
+  .bpmn-canvas{width:100%;height:560px;background:#fff}
   .bpmn-box+.bpmn-box{margin-top:30px}
 
   .embed{width:100%;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 16px 40px -32px rgba(43,133,146,.55)}
   .embed iframe{width:100%;height:680px;border:0;display:block}
   .hint{font-size:13px;color:var(--muted);margin-top:12px}
   .hint code{background:var(--sun-soft);padding:2px 7px;border-radius:5px;color:var(--navy)}
+  .btn-proto{display:inline-block;border:1.5px solid var(--mint);color:var(--mint-deep);padding:10px 22px;
+    border-radius:100px;font-weight:600;font-size:14px;text-decoration:none;transition:background .18s}
+  .btn-proto:hover{background:var(--mint-soft)}
 
   footer{background:var(--navy);color:#bfe6e6;padding:70px 0 54px}
   footer .row2{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
@@ -182,12 +169,11 @@
 
 <nav id="nav">
   <div class="row">
-    <span class="logo">
-      <svg class="mark" viewBox="0 0 60 40" fill="none"><path d="M20 20c0-7-5-11-10-11S0 13 0 20s5 11 10 11 10-4 10-11zm0 0c0 7 5 11 10 11s10-4 10-11-5-11-10-11-10 4-10 11z" stroke="url(#lg)" stroke-width="4" transform="translate(9)"/><circle cx="50" cy="10" r="4" fill="#f4a63c"/></svg>
-      <span><span class="t1">Travel</span><span class="t2">Loop</span></span>
-    </span>
+    <a href="#" class="logo" style="display:inline-flex;align-items:center">
+      <img src="logo-wide.png" alt="TravelLoop" style="height:34px;width:auto;display:block">
+    </a>
     <ul>
-       <li><a href="#market">Market Context</a></li>
+      <li><a href="#market">Market Context</a></li>
       <li><a href="#interview">User Interview</a></li>
       <li><a href="#persona">User Persona</a></li>
       <li><a href="#problem">Problem</a></li>
@@ -200,48 +186,18 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="cloud" style="width:120px;height:40px;top:120px;left:12%"></div>
-  <div class="cloud" style="width:90px;height:32px;top:180px;right:20%"></div>
-  <div class="cloud" style="width:150px;height:46px;top:90px;right:8%"></div>
-  <div class="hills" aria-hidden="true">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path d="M0,230 C260,150 420,250 680,170 C900,110 1120,220 1440,160 L1440,320 L0,320 Z" fill="rgba(94,198,200,.35)"/>
-      <path d="M0,270 C240,210 460,280 700,220 C920,170 1160,260 1440,220 L1440,320 L0,320 Z" fill="rgba(43,133,146,.45)"/>
-    </svg>
+  <div class="hero-img-wrap">
+    <img src="hero.png" alt="TravelLoop — Đi cùng nhau, tính sòng phẳng. App lên lịch trình và chia tiền du lịch nhóm." class="hero-img">
+    <a class="hero-hit hit-1" href="#flow" aria-label="Khám phá quy trình"></a>
+    <a class="hero-hit hit-2" href="#erd" aria-label="Xem thiết kế dữ liệu"></a>
   </div>
-  <div class="wrap">
-    <div class="eyebrow up d1">UX / Product Case Study</div>
-    <h1 class="up d2">Đi cùng nhau,<br><em>tính sòng phẳng.</em></h1>
-    <p class="lead up d3">TravelLoop giúp bạn dễ dàng lên lịch trình chung, chụp hóa đơn tự động chia tiền và nhắc nợ tinh tế cùng TravelLoop. Tạm biệt cảnh tính tay, chẳng lo ngại đòi nợ.</p>
-    <div class="cta up d4">
-      <a class="btn primary" href="#flow">Khám phá quy trình →</a>
-      <a class="btn ghost" href="#erd">Xem thiết kế dữ liệu</a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>Cuộn xuống</span><span class="bar"></span></div>
 </header>
 
-<div class="strip"><div class="track">
-  <span><b>Lên lịch</b> cùng cả nhóm</span><span><b>Chụp hóa đơn</b> · OCR tự nhận</span><span><b>Chia tiền</b> tự động</span><span><b>Nhắc nợ</b> bằng QR</span><span><b>Chốt lịch</b> khi &gt;½ đồng ý</span>
-  <span><b>Lên lịch</b> cùng cả nhóm</span><span><b>Chụp hóa đơn</b> · OCR tự nhận</span><span><b>Chia tiền</b> tự động</span><span><b>Nhắc nợ</b> bằng QR</span><span><b>Chốt lịch</b> khi &gt;½ đồng ý</span>
-</div></div>
 
-<div class="features">
-  <div class="wrap">
-    <div class="eyebrow reveal">Vì sao TravelLoop</div>
-    <h2 class="reveal" style="font-size:clamp(28px,4.4vw,44px);margin-top:10px;max-width:16ch;color:var(--navy)">Một app cho cả hành trình — từ lên kế hoạch tới lúc chia tiền.</h2>
-    <div class="feat-grid">
-      <div class="feat reveal"><div class="ic">🗺️</div><h3>Lên lịch cùng nhau</h3><p>Tạo lịch trình, mời cả nhóm, mỗi người góp ý trực tiếp. Chốt khi hơn nửa nhóm đồng ý.</p></div>
-      <div class="feat reveal"><div class="ic">🧾</div><h3>Chụp là xong</h3><p>Chụp hóa đơn, app tự nhận diện số tiền bằng OCR và gán vào đúng hoạt động.</p></div>
-      <div class="feat reveal"><div class="ic">💸</div><h3>Chia tiền sòng phẳng</h3><p>App tự quyết toán ai nợ ai, nhắc nợ định kỳ kèm mã QR chuyển khoản.</p></div>
-    </div>
-  </div>
-</div>
 
 <!-- 1 -->
 <section class="block" id="market"><div class="wrap">
   <div class="sec-head reveal"><span class="num">01</span><h2>Market Context</h2></div>
-  <p class="sec-desc reveal">Bối cảnh thị trường du lịch nhóm và nhu cầu chia tiền minh bạch.</p>
   <div class="two">
     <div class="reveal"><div class="ph"><div class="ph-t">Biểu đồ thị trường</div>Thay bằng ảnh biểu đồ của bạn<span class="mono">&lt;img class="shot" src="market-chart.png"&gt;</span></div></div>
     <div class="reveal"><p><em>[Điền nội dung Market Context]</em> — quy mô thị trường du lịch nhóm, tần suất đi theo nhóm, tỷ lệ người gặp rắc rối khi chia tiền chung.</p><p>Nêu 2–3 insight chính rút ra từ biểu đồ để dẫn tới cơ hội cho TravelLoop.</p></div>
@@ -251,9 +207,8 @@
 <!-- 2 -->
 <section class="block alt" id="interview"><div class="wrap">
   <div class="sec-head reveal"><span class="num">02</span><h2>User Interview</h2></div>
-  <p class="sec-desc reveal">Ba người dùng thực tế, xếp từ trái sang phải.</p>
   <div class="people">
-    <div class="person reveal"><div class="avatar" style="aspect-ratio:auto;padding:0"><img class="shot" src="interview-1.jpg" alt="Đỗ Thị Bích Liên" style="border-radius:0;border:0" onerror="this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 1 · interview-1.jpg',style:'padding:40px 12px'}))"></div><div class="body">
+    <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-1.jpg" alt="Đỗ Thị Bích Liên" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-1.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 1 · interview-1.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Đỗ Thị Bích Liên</h3><div class="age">35 tuổi · Kế toán trưởng</div><div class="role">Leader · Trưởng nhóm gánh vác</div>
       <div class="pblock"><div class="lab">Thói quen</div><p>Lên lịch trình và thống kê chi tiêu thủ công trên Google Sheets; dùng Zalo làm kênh thông báo chính cho cả nhóm.</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
@@ -265,7 +220,7 @@
       <p class="quote">"Tôi cần một chỗ tự động lo hết, đỡ phải nhắn Zalo và tính tay từng hóa đơn."</p>
     </div></div>
 
-    <div class="person reveal"><div class="avatar" style="aspect-ratio:auto;padding:0"><img class="shot" src="interview-2.jpg" alt="Nguyễn Minh" style="border-radius:0;border:0" onerror="this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 2 · interview-2.jpg',style:'padding:40px 12px'}))"></div><div class="body">
+    <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-2.jpg" alt="Nguyễn Minh" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-2.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 2 · interview-2.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Nguyễn Minh</h3><div class="age">27 tuổi · Nhân viên Marketing</div><div class="role">Tech-savvy Leader</div>
       <div class="pblock"><div class="lab">Thói quen</div><p>Tham khảo nhiều nguồn để lên kế hoạch; dùng Excel dự biên ngân sách và Splitwise để quản lý công nợ khi đi.</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
@@ -277,7 +232,7 @@
       <p class="quote">"Tôi muốn hết cảnh nhảy giữa Excel, chat và Splitwise chỉ cho một chuyến đi."</p>
     </div></div>
 
-    <div class="person reveal"><div class="avatar" style="aspect-ratio:auto;padding:0"><img class="shot" src="interview-3.jpg" alt="Lê Hạ Lan" style="border-radius:0;border:0" onerror="this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 3 · interview-3.jpg',style:'padding:40px 12px'}))"></div><div class="body">
+    <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-3.jpg" alt="Lê Hạ Lan" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-3.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 3 · interview-3.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Lê Hạ Lan</h3><div class="age">21 tuổi · Sinh viên Đại học</div><div class="role">Passive Follower · Thành viên phụ thuộc</div>
       <div class="pblock"><div class="lab">Thói quen</div><p>Nhận thông tin thụ động qua Zalo/Messenger; chuyển khoản cọc theo yêu cầu trưởng nhóm, ít khi tự tìm hiểu lịch trình hay ngân sách.</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
@@ -293,9 +248,8 @@
 <!-- 3 -->
 <section class="block" id="persona"><div class="wrap">
   <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
-  <p class="sec-desc reveal">Chân dung người dùng đại diện.</p>
   <div class="persona">
-    <div class="ph reveal" style="min-height:340px;padding:0;overflow:hidden"><img class="shot" src="persona.jpg" alt="Nguyễn Minh Anh" style="border-radius:0;border:0;height:100%;object-fit:cover" onerror="this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'<div class=ph-t>Ảnh persona</div>Thay bằng ảnh persona<span class=mono>persona.jpg</span>',className:'ph',style:'min-height:340px'}))"></div>
+    <div class="reveal" style="border-radius:18px;overflow:hidden;border:1px solid var(--line)"><img class="shot" src="persona.jpg" alt="Nguyễn Minh Anh" style="border-radius:0;border:0;width:100%;height:420px;object-fit:cover;display:block" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='persona.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'<div class=ph-t>Ảnh persona</div>Thay bằng ảnh persona<span class=mono>persona.jpg / persona.png</span>',className:'ph',style:'min-height:420px'}))}"></div>
     <div class="facts reveal"><h3>Nguyễn Minh Anh</h3><div class="tagline">Người tổ chức du lịch nhóm · 28 tuổi · Nhân viên văn phòng</div>
       <div class="pg">
         <div class="cell"><h4>🎯 Goals</h4><ul>
@@ -326,14 +280,12 @@
 <!-- 4 -->
 <section class="block alt" id="asis"><div class="wrap">
   <div class="sec-head reveal"><span class="num">04</span><h2>BPMN As-Is</h2></div>
-  <p class="sec-desc reveal">Quy trình hiện tại người dùng đang trải qua — nhúng trực tiếp từ file <code>.bpmn</code>.</p>
   <div class="bpmn-box reveal"><div class="cap"><span class="mono">as-is.bpmn</span><span style="color:var(--muted);font-weight:400">kéo & cuộn để xem</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
 </div></section>
 
 <!-- 5 -->
 <section class="block" id="problem"><div class="wrap">
   <div class="sec-head reveal"><span class="num">05</span><h2>Problem Statement</h2></div>
-  <p class="sec-desc reveal">Vấn đề cốt lõi TravelLoop giải quyết.</p>
   <div class="tablecard reveal"><table>
     <tr><th>Khía cạnh</th><th>Mô tả</th></tr>
     <tr><td class="k">Ai</td><td>Nhóm bạn/đồng nghiệp cùng đi du lịch, có một người đứng ra tổ chức.</td></tr>
@@ -346,7 +298,6 @@
 <!-- 6 -->
 <section class="block alt" id="fit"><div class="wrap">
   <div class="sec-head reveal"><span class="num">06</span><h2>Problem–Solution Fit</h2></div>
-  <p class="sec-desc reveal">Mỗi nỗi đau hiện tại được TravelLoop giải quyết ra sao.</p>
   <div class="tablecard reveal"><table class="fit">
     <tr><th>Vấn đề (As-Is)</th><th>Giải pháp TravelLoop (To-Be)</th></tr>
     <tr><td>Lên lịch rời rạc, tự tìm nhiều nguồn</td><td>Tạo lịch trong app, có AI gợi ý & mẫu cộng đồng</td></tr>
@@ -360,15 +311,12 @@
 <!-- 7 -->
 <section class="block" id="storymap"><div class="wrap">
   <div class="sec-head reveal"><span class="num">07</span><h2>User Story Map</h2></div>
-  <p class="sec-desc reveal">Bản đồ user story trên Figma.</p>
-  <div class="embed reveal"><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/ATUrCStKhNOfAw3meIBoa2/TravelLoop_User-Story-Map?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
-  <p class="hint">Thay <code>DÁN_LINK_FIGMA_STORY_MAP</code> bằng share link Figma của bạn.</p>
+  <div class="embed reveal"><iframe title="User Story Map" src="https://www.figma.com/embed?embed_host=share&url=DÁN_LINK_FIGMA_STORY_MAP" allowfullscreen></iframe></div>
 </div></section>
 
 <!-- 8 -->
 <section class="block alt" id="flow"><div class="wrap">
   <div class="sec-head reveal"><span class="num">08</span><h2>BPMN To-Be</h2></div>
-  <p class="sec-desc reveal">Hai quy trình đề xuất — nhúng trực tiếp từ file <code>.bpmn</code>.</p>
   <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-lich-trinh.bpmn</span><span style="color:var(--muted);font-weight:400">Lên & chốt lịch trình</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
   <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-chi-tieu.bpmn</span><span style="color:var(--muted);font-weight:400">Quản lý chi tiêu & chia tiền</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
 </div></section>
@@ -376,21 +324,25 @@
 <!-- 9 -->
 <section class="block" id="mockup"><div class="wrap">
   <div class="sec-head reveal"><span class="num">09</span><h2>UI Mockup</h2></div>
-  <p class="sec-desc reveal">Bản thiết kế giao diện trên Figma.</p>
-  <div class="embed reveal"><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
+
+  <h3 style="font-size:21px;color:var(--navy);margin:0 0 16px">A. Lịch trình</h3>
+  <div class="embed reveal"><iframe title="UI Mockup — Lịch trình" src="https://www.figma.com/embed?embed_host=share&url=DÁN_LINK_MOCKUP_LICH_TRINH" allowfullscreen></iframe></div>
+  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="DÁN_LINK_PROTO_LICH_TRINH" target="_blank" rel="noopener">▶ Chạy prototype Lịch trình</a></p>
+
+  <h3 style="font-size:21px;color:var(--navy);margin:44px 0 16px">B. Chi tiêu &amp; chia tiền</h3>
+  <div class="embed reveal"><iframe title="UI Mockup — Chi tiêu" src="https://www.figma.com/embed?embed_host=share&url=DÁN_LINK_MOCKUP_CHI_TIEU" allowfullscreen></iframe></div>
+  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="DÁN_LINK_PROTO_CHI_TIEU" target="_blank" rel="noopener">▶ Chạy prototype Chi tiêu</a></p>
 </div></section>
 
 <!-- 10 -->
 <section class="block alt" id="erd"><div class="wrap">
   <div class="sec-head reveal"><span class="num">10</span><h2>ERD</h2></div>
-  <p class="sec-desc reveal">Sơ đồ quan hệ thực thể — nhúng qua iframe.</p>
-  <div class="embed reveal"><iframe width="100%" height="500px" style="box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); border-radius:15px;" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Embedded DrawSQL IFrame" frameborder="0" src="https://drawsql.app/teams/thuuuu/diagrams/thu/embed"></iframe></div>
+  <div class="embed reveal"><iframe title="ERD" src="DÁN_LINK_ERD_IFRAME" allowfullscreen></iframe></div>
 
   <h3 style="font-size:22px;color:var(--navy);margin:44px 0 6px">Bảng quan hệ giữa các bảng</h3>
-  <p class="sec-desc reveal" style="margin:0 0 20px">Tra cứu khi nhìn sơ đồ khó theo dõi — mỗi dòng ghi rõ khóa ngoại (bảng con) trỏ tới khóa chính (bảng cha).</p>
   <div class="tablecard reveal" style="overflow-x:auto">
     <table style="font-size:13.5px;min-width:640px">
-      <tr><th>Quan hệ (1 → N)</th><th>Loại</th><th>Ý nghĩa</th></tr>
+      <tr><th>Bảng cha (1) → Bảng con (N)</th><th>Quan hệ</th><th>Ý nghĩa</th></tr>
       <tr><td class="mono">TAI_KHOAN.MaTK → THANH_VIEN_LT.MaTK</td><td>1–N</td><td>Một người tham gia nhiều chuyến</td></tr>
       <tr><td class="mono">LICH_TRINH.MaLT → THANH_VIEN_LT.MaLT</td><td>1–N</td><td>Một chuyến có nhiều thành viên</td></tr>
       <tr><td class="mono">VAI_TRO.MaVT → THANH_VIEN_LT.MaVT</td><td>1–N</td><td>Một vai trò gán cho nhiều thành viên</td></tr>
@@ -417,7 +369,7 @@
 </div></section>
 
 <footer><div class="wrap row2">
-  <span class="logo"><svg class="mark" viewBox="0 0 60 40" fill="none"><path d="M20 20c0-7-5-11-10-11S0 13 0 20s5 11 10 11 10-4 10-11zm0 0c0 7 5 11 10 11s10-4 10-11-5-11-10-11-10 4-10 11z" stroke="#7ad6d3" stroke-width="4" transform="translate(9)"/><circle cx="50" cy="10" r="4" fill="#f4a63c"/></svg><span><span style="color:#fff">Travel</span><span style="color:#7ad6d3">Loop</span></span></span>
+  <span class="logo" style="background:#fff;padding:8px 14px;border-radius:10px;display:inline-flex"><img src="logo-wide.png" alt="TravelLoop" style="height:28px;width:auto;display:block"></span>
   <small>UX / Product Case Study · Đặt các file .bpmn cùng thư mục với index.html</small>
 </div></footer>
 
