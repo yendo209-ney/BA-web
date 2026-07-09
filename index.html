@@ -48,7 +48,7 @@
   .hero-hit.hit-1{left:5.5%;top:81.5%;width:16%;height:8%}
   .hero-hit.hit-2{left:24%;top:81.5%;width:15%;height:8%}
 
-  .flight-divider{width:100%;max-width:1200px;margin:0 auto;padding:22px 24px 8px;background:var(--bg)}
+  .flight-divider{width:100%;max-width:1200px;margin:0 auto;padding:22px 24px 8px;background:var(--bg);position:relative;z-index:2}
   .flight-divider svg{width:100%;height:auto;display:block}
   .fd-path{stroke:var(--mint);stroke-width:2.5;stroke-dasharray:7 8}
   .fd-plane{fill:var(--mint-deep);opacity:.9}
@@ -92,8 +92,8 @@
 
   .two{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
   @media(max-width:820px){.two{grid-template-columns:1fr;gap:28px}}
-  .ph{border:1.5px dashed #c4dede;border-radius:18px;background:#fff;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:46px 24px;min-height:270px;font-size:14px}
+  .ph{border:1.5px solid var(--line);border-radius:18px;background:#fff;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:24px;min-height:300px;font-size:14px;box-shadow:0 10px 30px rgba(43,133,146,0.05)}
   .ph .ph-t{font-weight:600;color:var(--ink);margin-bottom:6px;font-family:'Fraunces',serif;font-size:18px}
   .ph .mono{font-size:11.5px;color:var(--mint-deep);margin-top:12px;word-break:break-all;background:var(--mint-soft);padding:5px 9px;border-radius:6px}
   img.shot{width:100%;border-radius:18px;border:1px solid var(--line);display:block}
@@ -169,6 +169,16 @@
     .reveal.in{opacity:1;transform:none}
   }
   :focus-visible{outline:2px solid var(--mint-deep);outline-offset:3px;border-radius:4px}
+  
+  /* Style cho Illustration bổ sung */
+  .hero-illustration {
+    width: 100%;
+    height: 140px;
+    background: transparent;
+    margin-top: -40px;
+    position: relative;
+    z-index: 1;
+  }
 </style>
 </head>
 <body>
@@ -211,7 +221,7 @@
 <nav id="nav">
   <div class="row">
     <a href="#" class="logo" style="display:inline-flex;align-items:center">
-      <img src="logo-wide.png" alt="TravelLoop" style="height:84px;width:auto;display:block">
+      <span class="t1">Travel</span><span class="t2">Loop</span>
     </a>
     <ul>
       <li><a href="#market">Market Context</a></li>
@@ -227,12 +237,35 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img-wrap">
-    <img src="hero.png" alt="TravelLoop — Đi cùng nhau, tính sòng phẳng" class="hero-img">
-    <a class="hero-hit hit-1" href="#flow" aria-label="Khám phá quy trình"></a>
-    <a class="hero-hit hit-2" href="#erd" aria-label="Xem thiết kế dữ liệu"></a>
+  <div class="hero-img-wrap" style="padding: 100px 24px 60px; text-align: center; max-width: var(--max);">
+    <div class="up d1" style="font-size: clamp(32px, 5vw, 56px); font-family: 'Fraunces', serif; font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 16px;">
+      Gói gọn cả hành trình,<br><span style="color: var(--mint-deep); font-style: italic;">sòng phẳng chi phí.</span>
+    </div>
+    <p class="up d2" style="color: var(--muted); max-width: 600px; margin: 0 auto 32px; font-size: 16px;">
+      TravelLoop giúp nhóm bạn lên kế hoạch chung, tự động chia tiền qua ảnh chụp hóa đơn và nhắc nợ tinh tế — xóa tan nỗi lo tính tay hay ngại đòi.
+    </p>
+    <div class="up d3" style="display: flex; gap: 16px; justify-content: center;">
+      <a class="btn-proto" href="#flow" style="background: var(--mint-deep); color: #fff; border-color: var(--mint-deep);">Khám phá quy trình →</a>
+      <a class="btn-proto" href="#erd">Xem thiết kế dữ liệu</a>
+    </div>
   </div>
 </section>
+
+<!-- ILLUSTRATION PHONG CẢNH DU LỊCH TRÊN DẢI PHÂN CÁCH -->
+<div class="hero-illustration" aria-hidden="true">
+  <svg viewBox="0 0 1440 140" width="100%" height="100%" preserveAspectRatio="none" style="display:block;">
+    <!-- Núi xa xa mờ -->
+    <path d="M 0 140 L 0 90 L 180 40 L 340 110 L 520 20 L 700 100 L 920 30 L 1140 120 L 1320 50 L 1440 100 L 1440 140 Z" fill="#e2f3f1" opacity="0.7"/>
+    <!-- Khinh khí cầu nhỏ xinh -->
+    <g transform="translate(200, 15)" fill="var(--sun)">
+      <path d="M10,0 C17,0 20,5 20,10 C20,16 14,22 10,25 C6,22 0,16 0,10 C0,5 3,0 10,0 Z"/>
+      <rect x="8" y="27" width="4" height="3" fill="var(--navy)"/>
+    </g>
+    <!-- Đám mây trôi -->
+    <path d="M420,30 C430,30 435,25 442,27 C448,22 458,25 462,30 C468,30 472,35 470,40 C465,45 420,45 420,30 Z" fill="#fff" opacity="0.85"/>
+    <path d="M1050,45 C1060,45 1065,40 1072,42 C1078,37 1088,40 1092,45 C1098,45 1102,50 1100,55 C1095,60 1050,60 1050,45 Z" fill="#fff" opacity="0.85"/>
+  </svg>
+</div>
 
 <div class="flight-divider" aria-hidden="true">
   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -251,16 +284,45 @@
   </svg>
 </div>
 
-
-
 <!-- 1 -->
 <section class="block" id="market" style="position:relative;overflow:hidden">
   <svg class="corner-ic ci-1" aria-hidden="true"><use href="#ic-compass"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">01</span><h2>Market Context</h2></div>
   <div class="two">
-    <div class="reveal"><div class="ph"><div class="ph-t">Biểu đồ thị trường</div>Thay bằng ảnh biểu đồ của bạn<span class="mono">&lt;img class="shot" src="market-chart.png"&gt;</span></div></div>
-    <div class="reveal"><p><em>[Điền nội dung Market Context]</em> — quy mô thị trường du lịch nhóm, tần suất đi theo nhóm, tỷ lệ người gặp rắc rối khi chia tiền chung.</p><p>Nêu 2–3 insight chính rút ra từ biểu đồ để dẫn tới cơ hội cho TravelLoop.</p></div>
+    <!-- KHỐI BIỂU ĐỒ ILLUSTRATION TỰ CODE BẰNG SVG NẰM Ở ĐÂY -->
+    <div class="reveal">
+      <div class="ph" style="border-style: solid; padding: 20px;">
+        <div class="ph-t" style="margin-bottom: 15px;">Thống kê du lịch nhóm & Tiền nong</div>
+        <svg viewBox="0 0 400 220" width="100%" height="100%" style="background:#fff;">
+          <!-- Grid lines -->
+          <line x1="40" y1="30" x2="370" y2="30" stroke="#f0f5f5" stroke-width="1"/>
+          <line x1="40" y1="80" x2="370" y2="80" stroke="#f0f5f5" stroke-width="1"/>
+          <line x1="40" y1="130" x2="370" y2="130" stroke="#f0f5f5" stroke-width="1"/>
+          <line x1="40" y1="180" x2="370" y2="180" stroke="#dcecec" stroke-width="1.5"/>
+          
+          <!-- Thống kê cột 1: Tỷ lệ đi du lịch nhóm -->
+          <rect x="70" y="60" width="35" height="120" rx="4" fill="var(--mint)" opacity="0.85"/>
+          <text x="87" y="50" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--mint-deep)" text-anchor="middle">78%</text>
+          <text x="87" y="198" font-family="sans-serif" font-size="11" fill="var(--muted)" text-anchor="middle">Đi nhóm</text>
+          
+          <!-- Thống kê cột 2: Gặp rắc rối chia tiền -->
+          <rect x="182" y="80" width="35" height="100" rx="4" fill="var(--sun)" opacity="0.85"/>
+          <text x="200" y="70" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--sun)" text-anchor="middle">62%</text>
+          <text x="200" y="198" font-family="sans-serif" font-size="11" fill="var(--muted)" text-anchor="middle">Bị sót bill</text>
+          
+          <!-- Thống kê cột 3: Ngại đòi nợ bạn bè -->
+          <rect x="295" y="45" width="35" height="135" rx="4" fill="var(--navy)" opacity="0.85"/>
+          <text x="312" y="35" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--navy)" text-anchor="middle">85%</text>
+          <text x="312" y="198" font-family="sans-serif" font-size="11" fill="var(--muted)" text-anchor="middle">Ngại đòi</text>
+        </svg>
+        <span class="mono">Thị trường có nhu cầu rạch ròi tài chính rất lớn</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p>Dựa trên khảo sát hành vi thế hệ trẻ, có đến <b>78%</b> người dùng ưu tiên lựa chọn hình thức du lịch nhóm cùng bạn bè hoặc đồng nghiệp[cite: 1]. Tuy nhiên, các rắc rối phát sinh từ tài chính chung luôn là "nỗi đau đau đáu"[cite: 1].</p>
+      <p>Hơn <b>62%</b> thừa nhận thường xuyên gặp tình trạng tính thiếu, mất hóa đơn, và đỉnh điểm là <b>85%</b> người gánh vác việc thu chi cảm thấy vô cùng e ngại khi phải chủ động nhắn tin nhắc nợ từng thành viên sau chuyến đi[cite: 1]. Đây chính là cơ hội vàng để <b>TravelLoop</b> giải quyết triệt để bài toán này[cite: 1].</p>
+    </div>
   </div>
 </div></section>
 
@@ -270,37 +332,37 @@
   <div class="people">
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-1.jpg" alt="Đỗ Thị Bích Liên" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-1.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 1 · interview-1.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Đỗ Thị Bích Liên</h3><div class="age">35 tuổi · Kế toán trưởng</div><div class="role">Leader · Trưởng nhóm gánh vác</div>
-      <div class="pblock"><div class="lab">Thói quen</div><p>Lên lịch trình và thống kê chi tiêu thủ công trên Google Sheets; dùng Zalo làm kênh thông báo chính cho cả nhóm.</p></div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Lên lịch trình và thống kê chi tiêu thủ công trên Google Sheets; dùng Zalo làm kênh thông báo chính cho cả nhóm[cite: 1].</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
-        <li>Mất thời gian nhập từng dòng lịch trình và chi phí vào Google Sheets trên màn hình điện thoại nhỏ.</li>
-        <li>Spam tin nhắn nhóm Zalo mỗi lần cập nhật, khiến tin quan trọng bị trôi.</li>
-        <li>Áp lực gom hóa đơn giấy, rà soát lịch sử ngân hàng, tính chính xác 100% khi chuyến đi kết thúc.</li>
+        <li>Mất thời gian nhập từng dòng lịch trình và chi phí vào Google Sheets trên màn hình điện thoại nhỏ[cite: 1].</li>
+        <li>Spam tin nhắn nhóm Zalo mỗi lần cập nhật, khiến tin quan trọng bị trôi[cite: 1].</li>
+        <li>Áp lực gom hóa đơn giấy, rà soát lịch sử ngân hàng, tính chính xác 100% khi chuyến đi kết thúc[cite: 1].</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một ứng dụng "tất cả trong một" tự động hóa nhập liệu, chia tiền và cập nhật cho nhóm — giảm tải thông báo thủ công qua Zalo.</p></div>
-      <p class="quote">"Tôi cần một chỗ tự động lo hết, đỡ phải nhắn Zalo và tính tay từng hóa đơn."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một ứng dụng "tất cả trong một" tự động hóa nhập liệu, chia tiền và cập nhật cho nhóm — giảm tải thông báo thủ công qua Zalo[cite: 1].</p></div>
+      <p class="quote">"Tôi cần một chỗ tự động lo hết, đỡ phải nhắn Zalo và tính tay từng hóa đơn."[cite: 1]</p>
     </div></div>
 
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-2.jpg" alt="Nguyễn Minh" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-2.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 2 · interview-2.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Nguyễn Minh</h3><div class="age">27 tuổi · Nhân viên Marketing</div><div class="role">Tech-savvy Leader</div>
-      <div class="pblock"><div class="lab">Thói quen</div><p>Tham khảo nhiều nguồn để lên kế hoạch; dùng Excel dự biên ngân sách và Splitwise để quản lý công nợ khi đi.</p></div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Tham khảo nhiều nguồn để lên kế hoạch; dùng Excel dự biên ngân sách và Splitwise để quản lý công nợ khi đi[cite: 1].</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
-        <li>Phân mảnh công cụ: chuyển qua lại giữa Excel, Zalo/Messenger và Splitwise.</li>
-        <li>Mất kết nối dữ liệu: khoản chi trên Splitwise không biết thuộc hoạt động nào trên Excel.</li>
-        <li>Tốn thời gian nhập khoản lẻ khi đang đi; cuối chuyến phải đối chiếu hai nền tảng và nhắc nợ từng người.</li>
+        <li>Phân mảnh công cụ: chuyển qua lại giữa Excel, Zalo/Messenger và Splitwise[cite: 1].</li>
+        <li>Mất kết nối dữ liệu: khoản chi trên Splitwise không biết thuộc hoạt động nào trên Excel[cite: 1].</li>
+        <li>Tốn thời gian nhập khoản lẻ khi đang đi; cuối chuyến phải đối chiếu hai nền tảng và nhắc nợ từng người[cite: 1].</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Mọi thông tin chuyến đi tập trung một nơi. Ghi chi phí nhanh, hệ thống tự nhắc thanh toán sau chuyến.</p></div>
-      <p class="quote">"Tôi muốn hết cảnh nhảy giữa Excel, chat và Splitwise chỉ cho một chuyến đi."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Mọi thông tin chuyến đi tập trung một nơi. Ghi chi phí nhanh, hệ thống tự nhắc thanh toán sau chuyến[cite: 1].</p></div>
+      <p class="quote">"Tôi muốn hết cảnh nhảy giữa Excel, chat và Splitwise chỉ cho một chuyến đi."[cite: 1]</p>
     </div></div>
 
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-3.jpg" alt="Lê Hạ Lan" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-3.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 3 · interview-3.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
       <h3>Lê Hạ Lan</h3><div class="age">21 tuổi · Sinh viên Đại học</div><div class="role">Passive Follower · Thành viên phụ thuộc</div>
-      <div class="pblock"><div class="lab">Thói quen</div><p>Nhận thông tin thụ động qua Zalo/Messenger; chuyển khoản cọc theo yêu cầu trưởng nhóm, ít khi tự tìm hiểu lịch trình hay ngân sách.</p></div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Nhận thông tin thụ động qua Zalo/Messenger; chuyển khoản cọc theo yêu cầu trưởng nhóm, ít khi tự tìm hiểu lịch trình hay ngân sách[cite: 1].</p></div>
       <div class="pblock"><div class="lab">Nỗi đau</div><ul>
-        <li>Mất kiểm soát thông tin: không biết nhóm đang chi tiêu ra sao, dùng công cụ gì để ghi nhận.</li>
-        <li>Thiếu minh bạch: cuối chuyến chỉ nhận một con số tổng, không biết mình đã chi cho hoạt động nào, không tự kiểm tra được.</li>
+        <li>Mất kiểm soát thông tin: không biết nhóm đang chi tiêu ra sao, dùng công cụ gì để ghi nhận[cite: 1].</li>
+        <li>Thiếu minh bạch: cuối chuyến chỉ nhận một con số tổng, không biết mình đã chi cho hoạt động nào, không tự kiểm tra được[cite: 1].</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một app chung để theo dõi toàn bộ lịch trình, biết rõ khoản nợ của mình theo thời gian thực và bấm thanh toán ngay thay vì chờ nhắc.</p></div>
-      <p class="quote">"Tôi chỉ muốn thấy rõ mình nợ vì cái gì và trả luôn, khỏi chờ ai nhắc."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một app chung để theo dõi toàn bộ lịch trình, biết rõ khoản nợ của mình theo thời gian thực và bấm thanh toán ngay thay vì chờ nhắc[cite: 1].</p></div>
+      <p class="quote">"Tôi chỉ muốn thấy rõ mình nợ vì cái gì và trả luôn, khỏi chờ ai nhắc."[cite: 1]</p>
     </div></div>
   </div>
 </div></section>
@@ -310,28 +372,28 @@
   <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
   <div class="persona">
     <div class="reveal" style="border-radius:18px;overflow:hidden;border:1px solid var(--line)"><img class="shot" src="persona.jpg" alt="Nguyễn Minh Anh" style="border-radius:0;border:0;width:100%;height:420px;object-fit:cover;display:block" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='persona.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'<div class=ph-t>Ảnh persona</div>Thay bằng ảnh persona<span class=mono>persona.jpg / persona.png</span>',className:'ph',style:'min-height:420px'}))}"></div>
-    <div class="facts reveal"><h3>Nguyễn Minh Anh</h3><div class="tagline">Người tổ chức du lịch nhóm · 28 tuổi · Nhân viên văn phòng</div>
+    <div class="facts reveal"><h3>Nguyễn Minh Anh</h3><div class="tagline">Người tổ chức du lịch nhóm · 28 tuổi · Nhân viên văn phòng[cite: 1]</div>
       <div class="pg">
         <div class="cell"><h4>🎯 Goals</h4><ul>
-          <li>Quản lý lịch trình, chi tiêu và công nợ trên một ứng dụng duy nhất.</li>
-          <li>Theo dõi chi phí minh bạch theo từng hoạt động và từng thành viên.</li>
-          <li>Tự động tổng hợp chi phí, chia tiền và nhắc thanh toán sau chuyến đi.</li>
+          <li>Quản lý lịch trình, chi tiêu và công nợ trên một ứng dụng duy nhất[cite: 1].</li>
+          <li>Theo dõi chi phí minh bạch theo từng hoạt động và từng thành viên[cite: 1].</li>
+          <li>Tự động tổng hợp chi phí, chia tiền và nhắc thanh toán sau chuyến đi[cite: 1].</li>
         </ul></div>
         <div class="cell"><h4>😤 Frustrations</h4><ul>
-          <li>Phải dùng nhiều công cụ: Google Sheet, Zalo/Messenger và app chia tiền.</li>
-          <li>Mất thời gian nhập liệu, đối chiếu chi phí, cập nhật thủ công.</li>
-          <li>Thành viên khó theo dõi lịch trình, không biết tiền chi cho hoạt động nào.</li>
+          <li>Phải dùng nhiều công cụ: Google Sheet, Zalo/Messenger và app chia tiền[cite: 1].</li>
+          <li>Mất thời gian nhập liệu, đối chiếu chi phí, cập nhật thủ công[cite: 1].</li>
+          <li>Thành viên khó theo dõi lịch trình, không biết tiền chi cho hoạt động nào[cite: 1].</li>
         </ul></div>
         <div class="cell"><h4>📱 Behaviors</h4><ul>
-          <li>Thường tổ chức các chuyến du lịch nhóm 4–8 người.</li>
-          <li>Dùng điện thoại là chính, kết hợp Google Sheet, Zalo và app chi tiêu.</li>
-          <li>Có thói quen kiểm tra ngân sách và cập nhật chi tiêu suốt chuyến đi.</li>
+          <li>Thường tổ chức các chuyến du lịch nhóm 4–8 người[cite: 1].</li>
+          <li>Dùng điện thoại là chính, kết hợp Google Sheet, Zalo và app chi tiêu[cite: 1].</li>
+          <li>Có thói quen kiểm tra ngân sách và cập nhật chi tiêu suốt chuyến đi[cite: 1].</li>
         </ul></div>
         <div class="cell"><h4>🧭 Context</h4><ul>
-          <li>Là người đứng ra gánh vác việc lên kế hoạch cho cả nhóm.</li>
-          <li>Muốn giảm tải công việc thủ công và thông báo lặp đi lặp lại.</li>
+          <li>Là người đứng ra gánh vác việc lên kế hoạch cho cả nhóm[cite: 1].</li>
+          <li>Muốn giảm tải công việc thủ công và thông báo lặp đi lặp lại[cite: 1].</li>
         </ul></div>
-        <div class="pquote">"Tôi muốn mọi thông tin về lịch trình, chi tiêu và thanh toán được tập trung ở một nơi thay vì phải quản lý trên nhiều ứng dụng khác nhau."</div>
+        <div class="pquote">"Tôi muốn mọi thông tin về lịch trình, chi tiêu và thanh toán được tập trung ở một nơi thay vì phải quản lý trên nhiều ứng dụng khác nhau."[cite: 1]</div>
       </div>
     </div>
   </div>
@@ -340,7 +402,7 @@
 <!-- 4 -->
 <section class="block alt" id="asis"><div class="wrap">
   <div class="sec-head reveal"><span class="num">04</span><h2>BPMN As-Is</h2></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">as-is.bpmn</span><span style="color:var(--muted);font-weight:400">kéo & cuộn để xem</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">as-is.bpmn</span><span style="color:var(--muted);font-weight:400">kéo & cuộn để xem[cite: 1]</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
 </div></section>
 
 <!-- 5 -->
@@ -348,10 +410,10 @@
   <div class="sec-head reveal"><span class="num">05</span><h2>Problem Statement</h2></div>
   <div class="tablecard reveal"><table>
     <tr><th>Khía cạnh</th><th>Mô tả</th></tr>
-    <tr><td class="k">Ai</td><td>Nhóm bạn/đồng nghiệp cùng đi du lịch, có một người đứng ra tổ chức.</td></tr>
-    <tr><td class="k">Vấn đề</td><td>Lên lịch rời rạc qua chat; góp ý tản mát; chi tiêu ghi tay, chia tiền dễ sai và ngại đòi nợ.</td></tr>
-    <tr><td class="k">Khi nào</td><td>Trong lúc lên kế hoạch, suốt chuyến đi, và sau khi về (quyết toán).</td></tr>
-    <tr><td class="k">Tác động</td><td>Mất thời gian, sai sót tiền bạc, căng thẳng trong nhóm, nợ dây dưa.</td></tr>
+    <tr><td class="k">Ai</td><td>Nhóm bạn/đồng nghiệp cùng đi du lịch, có một người đứng ra tổ chức[cite: 1].</td></tr>
+    <tr><td class="k">Vấn đề</td><td>Lên lịch rời rạc qua chat; góp ý tản mát; chi tiêu ghi tay, chia tiền dễ sai và ngại đòi nợ[cite: 1].</td></tr>
+    <tr><td class="k">Khi nào</td><td>Trong lúc lên kế hoạch, suốt chuyến đi, và sau khi về (quyết toán)[cite: 1].</td></tr>
+    <tr><td class="k">Tác động</td><td>Mất thời gian, sai sót tiền bạc, căng thẳng trong nhóm, nợ dây dưa[cite: 1].</td></tr>
   </table></div>
 </div></section>
 
@@ -360,11 +422,11 @@
   <div class="sec-head reveal"><span class="num">06</span><h2>Problem–Solution Fit</h2></div>
   <div class="tablecard reveal"><table class="fit">
     <tr><th>Vấn đề (As-Is)</th><th>Giải pháp TravelLoop (To-Be)</th></tr>
-    <tr><td>Lên lịch rời rạc, tự tìm nhiều nguồn</td><td>Tạo lịch trong app, có AI gợi ý & mẫu cộng đồng</td></tr>
-    <tr><td>Góp ý tản mát trong chat</td><td>Comment tập trung, chốt khi &gt;½ đồng ý</td></tr>
-    <tr><td>Nhập chi tiêu thủ công, dễ sai</td><td>Chụp hóa đơn, app OCR tự nhận khoản chi</td></tr>
-    <tr><td>Tính chia tiền bằng tay</td><td>App tự quyết toán & chia theo người tham gia</td></tr>
-    <tr><td>Ngại nhắc nợ, nợ dây dưa</td><td>App nhắc nợ định kỳ + mã QR chuyển khoản</td></tr>
+    <tr><td>Lên lịch rời rạc, tự tìm nhiều nguồn[cite: 1]</td><td>Tạo lịch trong app, có AI gợi ý & mẫu cộng đồng[cite: 1]</td></tr>
+    <tr><td>Góp ý tản mát trong chat[cite: 1]</td><td>Comment tập trung, chốt khi &gt;½ đồng ý[cite: 1]</td></tr>
+    <tr><td>Nhập chi tiêu thủ công, dễ sai[cite: 1]</td><td>Chụp hóa đơn, app OCR tự nhận khoản chi[cite: 1]</td></tr>
+    <tr><td>Tính chia tiền bằng tay[cite: 1]</td><td>App tự quyết toán & chia theo người tham gia[cite: 1]</td></tr>
+    <tr><td>Ngại nhắc nợ, nợ dây dưa[cite: 1]</td><td>App nhắc nợ định kỳ + mã QR chuyển khoản[cite: 1]</td></tr>
   </table></div>
 </div></section>
 
@@ -377,21 +439,21 @@
 <!-- 8 -->
 <section class="block alt" id="flow"><div class="wrap">
   <div class="sec-head reveal"><span class="num">08</span><h2>BPMN To-Be</h2></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-lich-trinh.bpmn</span><span style="color:var(--muted);font-weight:400">Lên & chốt lịch trình</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-chi-tieu.bpmn</span><span style="color:var(--muted);font-weight:400">Quản lý chi tiêu & chia tiền</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-lich-trinh.bpmn</span><span style="color:var(--muted);font-weight:400">Lên & chốt lịch trình[cite: 1]</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-chi-tieu.bpmn</span><span style="color:var(--muted);font-weight:400">Quản lý chi tiêu & chia tiền[cite: 1]</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
 </div></section>
 
 <!-- 9 -->
 <section class="block" id="mockup"><div class="wrap">
   <div class="sec-head reveal"><span class="num">09</span><h2>UI Mockup</h2></div>
 
-  <h3 style="font-size:21px;color:var(--navy);margin:0 0 16px">A. Lịch trình</h3>
+  <h3 style="font-size:21px;color:var(--navy);margin:0 0 16px">A. Lịch trình[cite: 1]</h3>
   <div class="embed reveal"><iframe title="UI Mockup — Lịch trình" src="https://embed.figma.com/design/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
-  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="https://www.figma.com/proto/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=0-1&t=4I4oYx5WY1aMCPwh-1" target="_blank" rel="noopener">▶ Chạy prototype Lịch trình</a></p>
+  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="https://www.figma.com/proto/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=0-1&t=4I4oYx5WY1aMCPwh-1" target="_blank" rel="noopener">▶ Chạy prototype Lịch trình[cite: 1]</a></p>
 
-  <h3 style="font-size:21px;color:var(--navy);margin:44px 0 16px">B. Chi tiêu</h3>
+  <h3 style="font-size:21px;color:var(--navy);margin:44px 0 16px">B. Chi tiêu[cite: 1]</h3>
   <div class="embed reveal"><iframe title="UI Mockup — Chi tiêu" src="https://embed.figma.com/design/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=112-1066&embed-host=share" allowfullscreen></iframe></div>
-  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="https://www.figma.com/proto/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=112-1066&t=4I4oYx5WY1aMCPwh-1" target="_blank" rel="noopener">▶ Chạy prototype Chi tiêu</a></p>
+  <p class="hint" style="margin-top:14px"><a class="btn-proto" href="https://www.figma.com/proto/78XDI5DMQ4zXTx193nnMKM/TravelLoop?node-id=112-1066&t=4I4oYx5WY1aMCPwh-1" target="_blank" rel="noopener">▶ Chạy prototype Chi tiêu[cite: 1]</a></p>
 </div></section>
 
 <!-- 10 -->
@@ -399,33 +461,33 @@
   <div class="sec-head reveal"><span class="num">10</span><h2>ERD</h2></div>
   <div class="embed reveal"><iframe title="ERD" src="https://drawsql.app/teams/thuuuu/diagrams/thu/embed" allowfullscreen></iframe></div>
 
-  <h3 style="font-size:22px;color:var(--navy);margin:44px 0 6px">Bảng quan hệ giữa các bảng</h3>
+  <h3 style="font-size:22px;color:var(--navy);margin:44px 0 6px">Bảng quan hệ giữa các bảng[cite: 1]</h3>
   <div class="tablecard reveal" style="overflow-x:auto">
     <table style="font-size:13.5px;min-width:640px">
       <tr><th>Bảng cha (1) → Bảng con (N)</th><th>Quan hệ</th><th>Ý nghĩa</th></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → THANH_VIEN_LT.MaTK</td><td>1–N</td><td>Một người tham gia nhiều chuyến</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → THANH_VIEN_LT.MaLT</td><td>1–N</td><td>Một chuyến có nhiều thành viên</td></tr>
-      <tr><td class="mono">VAI_TRO.MaVT → THANH_VIEN_LT.MaVT</td><td>1–N</td><td>Một vai trò gán cho nhiều thành viên</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → LICH_TRINH.MaTK</td><td>1–N</td><td>Một người tạo nhiều lịch trình</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → HOAT_DONG.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều hoạt động</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → KHOAN_CHI.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều khoản chi</td></tr>
-      <tr><td class="mono">HOAT_DONG.MaHD → KHOAN_CHI.MaHD</td><td>1–N</td><td>Một hoạt động gắn nhiều khoản chi</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → KHOAN_CHI.MaTK_nguoi_chi</td><td>1–N</td><td>Một người chi nhiều khoản</td></tr>
-      <tr><td class="mono">KHOAN_CHI.MaKC → CHITIET_CHIA.MaKC</td><td>1–N</td><td>Một khoản chi chia cho nhiều người</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → CHITIET_CHIA.MaTK</td><td>1–N</td><td>Một người tham gia nhiều khoản chia</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → COMMENT.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều comment</td></tr>
-      <tr><td class="mono">KHOAN_CHI.MaKC → COMMENT.MaKC</td><td>1–N</td><td>Một khoản chi có nhiều góp ý</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → COMMENT.MaTK</td><td>1–N</td><td>Một người viết nhiều comment</td></tr>
-      <tr><td class="mono">KHOAN_CHI.MaKC → CONG_NO.MaKC</td><td>1–N</td><td>Một khoản chi phát sinh nhiều công nợ</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK</td><td>1–N</td><td>Một người có nhiều khoản nợ</td></tr>
-      <tr><td class="mono">CONG_NO.MaCN → NHAC_NO.MaCN</td><td>1–N</td><td>Một công nợ bị nhắc nhiều lần</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → XAC_NHAN.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều lượt xác nhận</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → XAC_NHAN.MaTK</td><td>1–N</td><td>Một người xác nhận nhiều lần</td></tr>
-      <tr><td class="mono">LICH_TRINH.MaLT → LINK_CHIA_SE.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều link chia sẻ</td></tr>
-      <tr><td class="mono">TAI_KHOAN.MaTK → THONG_BAO.MaTK</td><td>1–N</td><td>Một người nhận nhiều thông báo</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → THANH_VIEN_LT.MaTK</td><td>1–N</td><td>Một người tham gia nhiều chuyến[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → THANH_VIEN_LT.MaLT</td><td>1–N</td><td>Một chuyến có nhiều thành viên[cite: 1]</td></tr>
+      <tr><td class="mono">VAI_TRO.MaVT → THANH_VIEN_LT.MaVT</td><td>1–N</td><td>Một vai trò gán cho nhiều thành viên[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → LICH_TRINH.MaTK</td><td>1–N</td><td>Một người tạo nhiều lịch trình[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → HOAT_DONG.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều hoạt động[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → KHOAN_CHI.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều khoản chi[cite: 1]</td></tr>
+      <tr><td class="mono">HOAT_DONG.MaHD → KHOAN_CHI.MaHD</td><td>1–N</td><td>Một hoạt động gắn nhiều khoản chi[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → KHOAN_CHI.MaTK_nguoi_chi</td><td>1–N</td><td>Một người chi nhiều khoản[cite: 1]</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → CHITIET_CHIA.MaKC</td><td>1–N</td><td>Một khoản chi chia cho nhiều người[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CHITIET_CHIA.MaTK</td><td>1–N</td><td>Một người tham gia nhiều khoản chia[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → COMMENT.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều comment[cite: 1]</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → COMMENT.MaKC</td><td>1–N</td><td>Một khoản chi có nhiều góp ý[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → COMMENT.MaTK</td><td>1–N</td><td>Một người viết nhiều comment[cite: 1]</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → CONG_NO.MaKC</td><td>1–N</td><td>Một khoản chi phát sinh nhiều công nợ[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK</td><td>1–N</td><td>Một người có nhiều khoản nợ[cite: 1]</td></tr>
+      <tr><td class="mono">CONG_NO.MaCN → NHAC_NO.MaCN</td><td>1–N</td><td>Một công nợ bị nhắc nhiều lần[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → XAC_NHAN.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều lượt xác nhận[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → XAC_NHAN.MaTK</td><td>1–N</td><td>Một người xác nhận nhiều lần[cite: 1]</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → LINK_CHIA_SE.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều link chia sẻ[cite: 1]</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → THONG_BAO.MaTK</td><td>1–N</td><td>Một người nhận nhiều thông báo[cite: 1]</td></tr>
     </table>
   </div>
-  <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA).</p>
+  <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA)[cite: 1].</p>
 </div></section>
 
 <div class="travel-strip" aria-hidden="true">
