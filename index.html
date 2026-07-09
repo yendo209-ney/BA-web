@@ -40,13 +40,13 @@
   @media(max-width:900px){nav ul{display:none}}
 
   /* HERO */
-  .hero{position:relative;width:100%;overflow:hidden;padding:88px 0 40px;
+  .hero{position:relative;width:100%;overflow:hidden;padding:88px 0 0;
     background:linear-gradient(160deg,#eafaf8 0%,#e4f2f1 55%,#eef7ee 100%);box-sizing:border-box}
   .hero-img-wrap{display:block;position:relative;max-width:100%;margin:0 auto}
   .hero-img{width:100%;height:auto;display:block}
   .hero-hit{position:absolute;cursor:pointer;z-index:10;display:block}
-  .hero-hit.hit-1{left:5.5%;top:73.5%;width:16%;height:7.5%}
-  .hero-hit.hit-2{left:24%;top:73.5%;width:15%;height:7.5%}
+  .hero-hit.hit-1{left:5.5%;top:81.5%;width:16%;height:8%}
+  .hero-hit.hit-2{left:24%;top:81.5%;width:15%;height:8%}
 
   .up{opacity:0;transform:translateY(26px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
   .up.d1{animation-delay:.05s}.up.d2{animation-delay:.18s}.up.d3{animation-delay:.32s}.up.d4{animation-delay:.46s}
@@ -147,8 +147,8 @@
     border-radius:100px;font-weight:600;font-size:14px;text-decoration:none;transition:background .18s}
   .btn-proto:hover{background:var(--mint-soft)}
 
-  footer{background:var(--navy);color:#bfe6e6;padding:70px 0 54px}
-  footer .row2{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  footer{width:100%;line-height:0}
+  .footer-img{width:100%;height:auto;display:block}
   footer small{color:#7fb3b8;font-size:13px}
 
   @media(prefers-reduced-motion:no-preference){
@@ -368,10 +368,9 @@
   <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA).</p>
 </div></section>
 
-<footer><div class="wrap row2">
-  <span class="logo" style="background:#fff;padding:10px 18px;border-radius:12px;display:inline-flex"><img src="logo-wide.png" alt="TravelLoop" style="height:38px;width:auto;display:block"></span>
-  <small>UX / Product Case Study · Đặt các file .bpmn cùng thư mục với index.html</small>
-</div></footer>
+<footer>
+  <img src="footer.png" alt="" class="footer-img" onerror="this.parentElement.style.display='none'">
+</footer>
 
 <script>
   const nav=document.getElementById('nav');
