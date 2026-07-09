@@ -34,14 +34,14 @@
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s;padding:5px 0}
   nav.solid{background:rgba(246,251,251,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
-  nav .row{max-width:var(--max);margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+  nav .row{max-width:var(--max);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between}
   nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:13.5px;font-weight:500}
   nav ul a{color:var(--muted)} nav ul a:hover{color:var(--mint-deep)}
   @media(max-width:900px){nav ul{display:none}}
 
   /* HERO */
-  .hero{position:relative;width:100%;background:linear-gradient(165deg,#eafaf8 0%,#e8f5f4 100%);padding-top:72px}
-  .hero-img-wrap{display:block;position:relative;max-width:1440px;margin:0 auto}
+  .hero{position:relative;width:100%;background:linear-gradient(165deg,#eafaf8 0%,#e8f5f4 100%);padding-top:80px}
+  .hero-img-wrap{display:block;position:relative;max-width:1180px;margin:0 auto;padding:0 24px}
   .hero-img{width:100%;height:auto;display:block}
   /* vùng bấm phủ lên 2 nút trong ảnh (theo tỉ lệ %) */
   .hero-hit{position:absolute;cursor:pointer;z-index:10;display:block}
@@ -170,7 +170,7 @@
 <nav id="nav">
   <div class="row">
     <a href="#" class="logo" style="display:inline-flex;align-items:center">
-      <img src="logo-wide.png" alt="TravelLoop" style="height:34px;width:auto;display:block">
+      <img src="logo-wide.png" alt="TravelLoop" style="height:48px;width:auto;display:block">
     </a>
     <ul>
       <li><a href="#market">Market Context</a></li>
