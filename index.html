@@ -40,24 +40,51 @@
   @media(max-width:900px){nav ul{display:none}}
 
   /* HERO */
-  .hero{position:relative;width:100%;overflow:hidden;padding:88px 0 0;
+  .hero{position:relative;width:100%;overflow:hidden;padding:130px 0 60px;
     background:linear-gradient(160deg,#eafaf8 0%,#e4f2f1 55%,#eef7ee 100%);box-sizing:border-box}
-  .hero-img-wrap{display:block;position:relative;max-width:100%;margin:0 auto}
-  .hero-img{width:100%;height:auto;display:block}
-  .hero-hit{position:absolute;cursor:pointer;z-index:10;display:block}
-  .hero-hit.hit-1{left:5.5%;top:81.5%;width:16%;height:8%}
-  .hero-hit.hit-2{left:24%;top:81.5%;width:15%;height:8%}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .95fr;gap:48px;align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px;text-align:center}}
+
+  .hero .eyebrow{display:inline-block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint-deep);font-weight:700}
+  .hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(42px,6vw,72px);
+    color:var(--navy);letter-spacing:-.02em;line-height:1.14;margin:18px 0 0}
+  .hero h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--mint-deep)}
+  .hero .lead{font-size:clamp(15.5px,1.6vw,18px);color:var(--muted);max-width:480px;margin:22px 0 0;line-height:1.7}
+  .hero .lead b{color:var(--mint-deep)}
+  @media(max-width:900px){.hero .lead{max-width:560px;margin:22px auto 0}}
+
+  .hero-feats{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap}
+  @media(max-width:900px){.hero-feats{justify-content:center}}
+  .hf{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;color:var(--navy);font-weight:600;line-height:1.35;text-align:center;width:82px}
+  .hf-ic{width:34px;height:34px;color:var(--mint-deep);flex:none;transition:transform .2s;background:var(--mint-soft);border-radius:50%;padding:9px;box-sizing:content-box}
+  .hf:hover .hf-ic{transform:translateY(-3px) scale(1.08)}
+
+  .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  @media(max-width:900px){.cta{justify-content:center}}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;border-radius:100px;
+    padding:13px 26px;transition:transform .18s,box-shadow .18s,background .18s;text-decoration:none}
+  .btn-primary{background:linear-gradient(135deg,var(--mint2),var(--mint-deep));color:#fff;
+    box-shadow:0 10px 26px -8px rgba(43,133,146,.55)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-outline{border:1.5px solid var(--mint);color:var(--mint-deep);background:rgba(255,255,255,.6)}
+  .btn-outline:hover{background:#fff}
+
+  .hero-art{width:100%}
+  .hero-visual-img{width:100%;height:auto;display:block;border-radius:20px}
+  .hero-visual-ph{width:100%;aspect-ratio:4/3;border:1.5px dashed #c4dede;border-radius:20px;background:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:14px;gap:8px;padding:24px}
+  .hero-visual-ph .mono{font-size:11.5px;color:var(--mint-deep);background:var(--mint-soft);padding:4px 9px;border-radius:6px}
+  @media(max-width:900px){.hero-art{max-width:420px;margin:0 auto}}
 
   .flight-divider{width:100%;max-width:1200px;margin:0 auto;padding:22px 24px 8px;background:var(--bg)}
   .flight-divider svg{width:100%;height:auto;display:block}
   .fd-path{stroke:var(--mint);stroke-width:2.5;stroke-dasharray:7 8}
-  .fd-plane{fill:var(--mint-deep);opacity:.9}
+  .fd-scooter{offset-path:path("M40,80 C260,10 420,110 620,50 C820,-10 940,90 1160,40");
+    offset-rotate:auto;animation:driveScooter 7s linear infinite}
+  @keyframes driveScooter{0%{offset-distance:0%}100%{offset-distance:100%}}
+  @media(prefers-reduced-motion:reduce){.fd-scooter{animation:none;offset-distance:50%}}
   .fd-pin{fill:var(--sun);opacity:.85}
 
-  .travel-strip{display:flex;justify-content:center;gap:44px;padding:44px 24px;flex-wrap:wrap;
-    background:linear-gradient(180deg,#fff,#eaf6f5);border-top:1px solid var(--line)}
-  .ts-ic{width:46px;height:46px;color:var(--mint-deep);opacity:.95;transition:opacity .2s,transform .2s}
-  .ts-ic:hover{opacity:1;transform:translateY(-3px)}
   .corner-ic{position:absolute;width:34px;height:34px;opacity:.4;pointer-events:none;transition:opacity .3s}
   .corner-ic.ci-1{color:var(--sun);top:22px;right:26px}
   .corner-ic.ci-2{color:var(--mint-deep);left:20px;bottom:22px;width:30px;height:30px}
@@ -304,6 +331,18 @@
     <circle cx="17" cy="5" r="1.3" fill="currentColor" stroke="none"/>
   </symbol>
 
+  <symbol id="ic-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8" r="3.2"/>
+    <path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/>
+    <circle cx="17" cy="8.5" r="2.4"/>
+    <path d="M15.5 14.7c2.6.2 4.5 2.2 4.5 5.3"/>
+  </symbol>
+
+  <symbol id="ic-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 10a6 6 0 0112 0c0 4 1.4 5.5 2 6.2H4c.6-.7 2-2.2 2-6.2z"/>
+    <path d="M10 19.5a2.2 2.2 0 004 0"/>
+  </symbol>
+
   <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="5" width="18" height="16" rx="2.4"/>
     <path d="M3 9.5h18"/>
@@ -377,18 +416,35 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img-wrap">
-    <img src="hero.png" alt="TravelLoop — Đi cùng nhau, tính sòng phẳng" class="hero-img">
-    <a class="hero-hit hit-1" href="#flow" aria-label="Khám phá quy trình"></a>
-    <a class="hero-hit hit-2" href="#erd" aria-label="Xem thiết kế dữ liệu"></a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow up d1">Product Case Study</span>
+      <h1 class="up d2">Đi cùng nhau,<br><em>tính sòng phẳng.</em></h1>
+      <p class="lead up d3"><b>TravelLoop</b> giúp bạn dễ dàng lên lịch trình chung, chụp hóa đơn tự động chia tiền và nhắc thanh toán tinh tế cùng <b>TravelLoop</b>.<br>Tạm biệt cảnh tính tay, chẳng lo ngại <b>thanh toán</b>.</p>
+      <div class="hero-feats up d3">
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-calendar"/></svg><span>Lên lịch trình<br>dễ dàng</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-camera"/></svg><span>Chụp hóa đơn<br>tự động</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-people"/></svg><span>Tự chia tiền<br>công bằng</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-bell"/></svg><span>Nhắc thanh toán<br>tinh tế</span></div>
+      </div>
+      <div class="cta up d4">
+        <a class="btn btn-primary" href="#flow">Khám phá quy trình →</a>
+        <a class="btn btn-outline" href="#erd">Xem thiết kế dữ liệu</a>
+      </div>
+    </div>
+
+    <div class="hero-art up d3">
+      <img src="hero-visual.png" alt="TravelLoop app illustration" class="hero-visual-img"
+        onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'hero-visual-ph',innerHTML:'Thay ảnh minh họa (điện thoại, vali...) vào đây<br><span class=mono>hero-visual.png</span>'}))">
+    </div>
   </div>
 </section>
 
 <div class="flight-divider" aria-hidden="true">
   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
     <path class="fd-path" d="M40,80 C260,10 420,110 620,50 C820,-10 940,90 1160,40" fill="none"/>
-    <g class="fd-plane" transform="translate(590,54) rotate(-14)">
-      <path d="M0,0 L26,3 L34,0 L26,-3 Z M13,-1 L13,-10 L16,-10 L18,-1 Z M13,1 L13,10 L16,10 L18,1 Z" />
+    <g class="fd-scooter" color="var(--mint-deep)">
+      <use href="#ic-scooter" width="42" height="26" x="-21" y="-16"/>
     </g>
     <g class="fd-pin" transform="translate(40,80)">
       <path d="M0,-18 C8,-18 14,-12 14,-4 C14,6 0,18 0,18 C0,18 -14,6 -14,-4 C-14,-12 -8,-18 0,-18 Z"/>
@@ -722,13 +778,6 @@
   </div>
   <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA). LICH_TRINH_MAU/HOAT_DONG_MAU là bảng snapshot tĩnh, tách biệt hoàn toàn khỏi thành viên/công nợ/comment thật để bảo vệ riêng tư khi công khai làm mẫu.</p>
 </div></section>
-
-<div class="travel-strip" aria-hidden="true">
-  <svg class="ts-ic"><use href="#ic-compass"/></svg>
-  <svg class="ts-ic"><use href="#ic-suitcase"/></svg>
-  <svg class="ts-ic"><use href="#ic-palm"/></svg>
-  <svg class="ts-ic"><use href="#ic-camera"/></svg>
-</div>
 
 <footer>
   <img src="footer.png" alt="" class="footer-img" onerror="this.parentElement.style.display='none'">
