@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/bpmn-js@17.11.1/dist/bpmn-viewer.development.js"></script>
 <style>
   :root{
     /* palette xanh lá cây — thiên nhiên, du lịch */
@@ -46,6 +47,7 @@
     background-size:200% 200%;animation:heroBreathe 14s ease-in-out infinite;box-sizing:border-box}
   @keyframes heroBreathe{0%,100%{background-position:0% 0%}50%{background-position:100% 60%}}
   @media(prefers-reduced-motion:reduce){.hero{animation:none}}
+  .hero-decor{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
   .hero .hero-grid{position:relative;z-index:1}
   .hero-grid{display:block;text-align:center;max-width:720px;margin:0 auto}
 
@@ -411,14 +413,35 @@
       <li><a href="#flow">BPMN To-Be</a></li>
       <li><a href="#mockup">UI Mockup</a></li>
       <li><a href="#erd">ERD</a></li>
-      <li><a href="BRD_TravelLoop.docx" target="_blank" rel="noopener">BRD ↗</a></li>
-      <li><a href="SRS_TravelLoop.docx" target="_blank" rel="noopener">SRS ↗</a></li>
+      <li><a href="SRS_TravelLoop_EN.docx" target="_blank" rel="noopener">SRS ↗</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-decor" aria-hidden="true">
+    <svg viewBox="0 0 400 500" preserveAspectRatio="none" style="position:absolute;left:-60px;top:0;width:32%;height:100%;z-index:0">
+      <path fill="var(--mint-soft)" opacity=".7" d="M-40,120 C60,60 140,140 120,240 C100,340 20,320 -20,400 C-60,470 -80,500 -80,500 L-80,0 L-40,0 Z"/>
+      <path fill="var(--sun-soft)" opacity=".55" d="M300,40 C360,70 380,140 340,180 C300,220 240,190 230,140 C220,90 250,20 300,40 Z"/>
+    </svg>
+    <svg viewBox="0 0 400 500" preserveAspectRatio="none" style="position:absolute;right:-60px;top:0;width:32%;height:100%;z-index:0">
+      <path fill="var(--mint-soft)" opacity=".7" d="M440,140 C340,80 260,160 280,260 C300,360 380,340 420,410 C460,480 480,500 480,500 L480,0 L440,0 Z"/>
+      <path fill="var(--sun-soft)" opacity=".55" d="M100,60 C160,90 170,150 130,180 C90,210 40,180 40,130 C40,80 50,35 100,60 Z"/>
+    </svg>
+    <svg class="hd-ic floaty" style="position:absolute;left:6%;top:14%;width:38px;height:38px;color:var(--mint-deep);opacity:.55;animation-delay:.1s" aria-hidden="true"><use href="#ic-compass"/></svg>
+    <svg class="hd-ic floaty" style="position:absolute;left:2%;top:58%;width:44px;height:44px;color:var(--sun);opacity:.5;animation-delay:.35s" aria-hidden="true"><use href="#ic-suitcase"/></svg>
+    <svg class="hd-ic floaty" style="position:absolute;left:14%;top:78%;width:30px;height:30px;color:var(--mint);opacity:.5;animation-delay:.55s" aria-hidden="true"><use href="#ic-cloud"/></svg>
+    <svg class="hd-ic floaty" style="position:absolute;right:5%;top:16%;width:40px;height:40px;color:var(--mint-deep);opacity:.55;animation-delay:.2s" aria-hidden="true"><use href="#ic-camera"/></svg>
+    <svg class="hd-ic floaty" style="position:absolute;right:3%;top:56%;width:36px;height:36px;color:var(--sun);opacity:.5;animation-delay:.45s" aria-hidden="true"><use href="#ic-globe"/></svg>
+    <svg class="hd-ic floaty" style="position:absolute;right:15%;top:80%;width:30px;height:30px;color:var(--mint);opacity:.5;animation-delay:.65s" aria-hidden="true"><use href="#ic-island"/></svg>
+    <svg viewBox="0 0 900 60" preserveAspectRatio="none" style="position:absolute;left:8%;top:38%;width:22%;height:auto;opacity:.5">
+      <path d="M10,30 C120,5 200,55 320,25 C440,-5 520,40 640,15" fill="none" stroke="var(--mint)" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/>
+    </svg>
+    <svg viewBox="0 0 900 60" preserveAspectRatio="none" style="position:absolute;right:8%;top:66%;width:22%;height:auto;opacity:.5">
+      <path d="M10,30 C120,55 200,5 320,25 C440,45 520,10 640,25" fill="none" stroke="var(--sun)" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="eyebrow up d1">Product Case Study</span>
@@ -657,7 +680,7 @@
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">04</span><h2>BPMN As-Is</h2></div>
   <div class="mkt-callout reveal"><p>In short: every task lives in a different place — and every place has its own problem.</p></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">bpmn_asis_en.html</span><span style="color:var(--muted);font-weight:400">English version</span></div><iframe src="bpmn_asis_en.html" style="width:100%;height:560px;border:0;display:block"></iframe></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">as-is.bpmn</span><span style="color:var(--muted);font-weight:400">drag & scroll to view</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
 </div></section>
 
 <!-- 5 -->
@@ -722,8 +745,8 @@
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">08</span><h2>BPMN To-Be</h2></div>
   <div class="mkt-callout reveal"><p>In short: everything lives in one place, and the system handles the most tedious part — chasing payments.</p></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">bpmn_tobe_lichtrinh_en.html</span><span style="color:var(--muted);font-weight:400">Plan & finalize itinerary</span></div><iframe src="bpmn_tobe_lichtrinh_en.html" style="width:100%;height:560px;border:0;display:block"></iframe></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">bpmn_tobe_chitieu_en.html</span><span style="color:var(--muted);font-weight:400">Expenses & splitting</span></div><iframe src="bpmn_tobe_chitieu_en.html" style="width:100%;height:560px;border:0;display:block"></iframe></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-lich-trinh.bpmn</span><span style="color:var(--muted);font-weight:400">Plan & finalize itinerary</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-chi-tieu.bpmn</span><span style="color:var(--muted);font-weight:400">Expenses & splitting</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
 </div></section>
 
 <!-- 9 -->
@@ -751,7 +774,7 @@
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">10</span><h2>ERD</h2></div>
   <p class="reveal" style="color:var(--muted);font-size:14px;font-style:italic;margin:0 0 24px;max-width:640px">This section is for anyone who wants to see how the data is structured under the hood — if you only care about the user experience, feel free to skip it.</p>
-  <div class="embed reveal"><iframe title="ERD" src="erd_en.html" style="height:1400px"></iframe></div>
+  <div class="embed reveal"><iframe title="ERD" src="https://drawsql.app/teams/thuuuu/diagrams/thu/embed" allowfullscreen></iframe></div>
 
 </div></section>
 
@@ -770,6 +793,15 @@
   addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  async function renderBpmn(id,url){
+    const el=document.getElementById(id);
+    try{const r=await fetch(url);if(!r.ok)throw 0;const xml=await r.text();
+      const v=new BpmnJS({container:'#'+id});await v.importXML(xml);v.get('canvas').zoom('fit-viewport','auto');
+    }catch(e){el.innerHTML='<div style="display:flex;height:100%;align-items:center;justify-content:center;color:#5d7880;font-size:14px;text-align:center;padding:24px">Could not load <code style="margin:0 5px">'+url+'</code> — place the .bpmn file in the same folder and reload the page.</div>';}
+  }
+  renderBpmn('viewer-asis','as-is.bpmn');
+  renderBpmn('viewer-tobe1','to-be-lich-trinh.bpmn');
+  renderBpmn('viewer-tobe2','to-be-chi-tieu.bpmn');
 </script>
 </body>
 </html>
