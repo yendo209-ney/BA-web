@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TravelLoop — Group Trip Planning & Expense Splitting</title>
+<title>TravelLoop — Lên lịch trình & quản lý chi tiêu du lịch nhóm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -151,7 +151,7 @@
   .fact{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
   .fact b{color:var(--mint-deep);font-weight:600}
 
-  /* interview extension */
+  /* interview mở rộng */
   .person .body h3{font-size:19px}
   .person .body .age{font-size:12.5px;color:var(--muted);margin:2px 0 2px}
   .pblock{margin-top:12px}
@@ -413,7 +413,7 @@
       <li><a href="#flow">BPMN To-Be</a></li>
       <li><a href="#mockup">UI Mockup</a></li>
       <li><a href="#erd">ERD</a></li>
-      <li><a href="SRS_TravelLoop_EN.docx" target="_blank" rel="noopener">SRS ↗</a></li>
+      <li><a href="SRS_TravelLoop.docx" target="_blank" rel="noopener">SRS ↗</a></li>
     </ul>
   </div>
 </nav>
@@ -445,17 +445,17 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="eyebrow up d1">Product Case Study</span>
-      <h1 class="up d2">Travel together,<br><em>settle fairly.</em></h1>
-      <p class="lead up d3">Nobody wants to be the one nagging their best friend to pay up. <b>TravelLoop</b> handles that — so all you need to worry about is where to go and what to do.</p>
+      <h1 class="up d2">Đi cùng nhau,<br><em>tính sòng phẳng.</em></h1>
+      <p class="lead up d3">Không ai muốn là người phải nhắc bạn thân trả tiền. <b>TravelLoop</b> lo phần đó — để bạn chỉ cần lo chuyện đi đâu, chơi gì.</p>
       <div class="hero-feats up d3">
-        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-calendar"/></svg><span>Easy<br>trip planning</span></div>
-        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-camera"/></svg><span>Auto<br>receipt scan</span></div>
-        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-people"/></svg><span>Fair<br>bill splitting</span></div>
-        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-bell"/></svg><span>Gentle<br>payment reminders</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-calendar"/></svg><span>Lên lịch trình<br>dễ dàng</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-camera"/></svg><span>Chụp hóa đơn<br>tự động</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-people"/></svg><span>Tự chia tiền<br>công bằng</span></div>
+        <div class="hf"><svg class="hf-ic" aria-hidden="true"><use href="#ic-bell"/></svg><span>Nhắc thanh toán<br>tinh tế</span></div>
       </div>
       <div class="cta up d4">
-        <a class="btn btn-primary" href="#flow">See how TravelLoop works →</a>
-        <a class="btn btn-outline" href="#erd">For the technically curious</a>
+        <a class="btn btn-primary" href="#flow">Xem TravelLoop hoạt động thế nào →</a>
+        <a class="btn btn-outline" href="#erd">Dành cho người muốn xem kỹ thuật</a>
       </div>
     </div>
   </div>
@@ -488,16 +488,16 @@
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">01</span><h2>Market Context</h2></div>
 
-  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 20px;max-width:640px">Before talking about the product, consider a fact: more and more people in Vietnam are choosing self-organized group trips — and more of them are stuck scrolling through dozens of Zalo messages just to figure out who owes whom.</p>
-  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-trend"/></svg>Context</h3>
+  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 20px;max-width:640px">Trước khi nói về sản phẩm, hãy nhìn vào một sự thật: ngày càng nhiều người Việt chọn tự đi chơi theo nhóm — và ngày càng nhiều người trong số đó đang loay hoay với hàng chục cuộc trò chuyện Zalo chỉ để tính xem ai nợ ai bao nhiêu.</p>
+  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-trend"/></svg>Bối cảnh</h3>
   <div class="mkt-callout reveal">
-    <p>Vietnam's tourism industry is entering a period of strong growth.</p>
-    <p>=&gt; The market continues to expand.</p>
+    <p>Du lịch Việt Nam đang bước vào giai đoạn tăng trưởng mạnh.</p>
+    <p>=&gt; Quy mô thị trường tiếp tục mở rộng.</p>
   </div>
 
   <div class="reveal chart-card">
-    <svg viewBox="0 0 640 340" class="chart-svg" role="img" aria-label="Vietnam tourist growth 2023-2025">
-      <text x="320" y="24" text-anchor="middle" class="chart-title">Vietnam Tourist Growth 2023–2025</text>
+    <svg viewBox="0 0 640 340" class="chart-svg" role="img" aria-label="Tăng trưởng khách du lịch Việt Nam 2023-2025">
+      <text x="320" y="24" text-anchor="middle" class="chart-title">Tăng trưởng khách du lịch Việt Nam 2023–2025</text>
       <line x1="60" y1="270" x2="600" y2="270" stroke="var(--line)" stroke-width="1.5"/>
       <line x1="60" y1="60" x2="60" y2="270" stroke="var(--line)" stroke-width="1.5"/>
       <g class="chart-ax"><text x="52" y="274" text-anchor="end">0</text><text x="52" y="234" text-anchor="end">20</text><text x="52" y="194" text-anchor="end">40</text><text x="52" y="154" text-anchor="end">60</text><text x="52" y="114" text-anchor="end">80</text><text x="52" y="74" text-anchor="end">100</text></g>
@@ -523,21 +523,21 @@
         <text x="547" y="292" text-anchor="middle" class="chart-yr">2025</text>
       </g>
       <g transform="translate(160,300)">
-        <rect width="12" height="12" fill="var(--navy)"/><text x="18" y="10" class="chart-legend">International visitors (millions)</text>
-        <rect x="180" width="12" height="12" fill="var(--mint2)"/><text x="198" y="10" class="chart-legend">Domestic visitors (millions)</text>
+        <rect width="12" height="12" fill="var(--navy)"/><text x="18" y="10" class="chart-legend">Khách quốc tế (triệu lượt)</text>
+        <rect x="180" width="12" height="12" fill="var(--mint2)"/><text x="198" y="10" class="chart-legend">Khách nội địa (triệu lượt)</text>
       </g>
     </svg>
-    <p class="chart-caption"><em>Vietnam Tourist Growth 2023–2025</em><br>Source: Vietnam National Authority of Tourism — MOCST; General Statistics Office, updated Jan 2026</p>
+    <p class="chart-caption"><em>Tăng trưởng khách du lịch Việt Nam 2023–2025</em><br>Nguồn: Cục Du lịch Quốc gia Việt Nam — Bộ VHTTDL; Cục Thống kê, cập nhật 01/2026</p>
   </div>
 
   <div class="mkt-callout reveal">
-    <p>Self-organized group travel is becoming a trend.</p>
-    <p>This trend shows group trips are becoming more common, with travelers taking a more active role in planning.</p>
+    <p>Du lịch tự túc theo nhóm đang trở thành xu hướng.</p>
+    <p>Xu hướng này cho thấy các chuyến đi nhóm ngày càng phổ biến và người dùng chủ động hơn trong việc tổ chức hành trình.</p>
   </div>
 
   <div class="reveal chart-card">
-    <svg viewBox="0 0 560 315" class="chart-svg" role="img" aria-label="Group travel trends Summer 2024 vs Summer 2025">
-      <text x="280" y="24" text-anchor="middle" class="chart-title">Group Travel Trends — Summer 2024 vs Summer 2025</text>
+    <svg viewBox="0 0 560 315" class="chart-svg" role="img" aria-label="Xu hướng du lịch theo nhóm Hè 2024 vs Hè 2025">
+      <text x="280" y="24" text-anchor="middle" class="chart-title">Xu hướng du lịch theo nhóm — Hè 2024 vs Hè 2025</text>
       <line x1="60" y1="230" x2="520" y2="230" stroke="var(--line)" stroke-width="1.5"/>
       <line x1="60" y1="50" x2="60" y2="230" stroke="var(--line)" stroke-width="1.5"/>
       <g>
@@ -545,48 +545,48 @@
         <text x="148" y="86" text-anchor="middle" class="chart-val">47.4%</text>
         <rect class="bar" style="animation-delay:.15s" x="170" y="76" width="36" height="154" fill="var(--navy)"/>
         <text x="188" y="69" text-anchor="middle" class="chart-val">50.5%</text>
-        <text x="168" y="252" text-anchor="middle" class="chart-yr">Multi-generational<tspan x="168" dy="14">family trips</tspan></text>
+        <text x="168" y="252" text-anchor="middle" class="chart-yr">Đi theo gia đình<tspan x="168" dy="14">đa thế hệ</tspan></text>
       </g>
       <g>
         <rect class="bar" style="animation-delay:.25s" x="330" y="105" width="36" height="125" fill="var(--mint-soft)" stroke="var(--mint2)" stroke-width="1.5"/>
         <text x="348" y="98" text-anchor="middle" class="chart-val">42.5%</text>
         <rect class="bar" style="animation-delay:.35s" x="370" y="126" width="36" height="104" fill="var(--navy)"/>
         <text x="388" y="119" text-anchor="middle" class="chart-val">35.5%</text>
-        <text x="368" y="252" text-anchor="middle" class="chart-yr">Fully self-<tspan x="368" dy="14">planned</tspan></text>
+        <text x="368" y="252" text-anchor="middle" class="chart-yr">Tự lên kế hoạch<tspan x="368" dy="14">hoàn toàn</tspan></text>
       </g>
       <g transform="translate(201,292)">
-        <rect width="12" height="12" fill="var(--mint-soft)" stroke="var(--mint2)"/><text x="18" y="10" class="chart-legend">Summer 2024</text>
-        <rect x="90" width="12" height="12" fill="var(--navy)"/><text x="108" y="10" class="chart-legend">Summer 2025</text>
+        <rect width="12" height="12" fill="var(--mint-soft)" stroke="var(--mint2)"/><text x="18" y="10" class="chart-legend">Hè 2024</text>
+        <rect x="90" width="12" height="12" fill="var(--navy)"/><text x="108" y="10" class="chart-legend">Hè 2025</text>
       </g>
     </svg>
-    <p class="chart-caption"><em>Group Travel Trends — Summer 2024 vs Summer 2025</em><br>Source: The Outbox Vietnam Travel Market Tracker — Summer 2025</p>
+    <p class="chart-caption"><em>Xu hướng du lịch theo nhóm — Hè 2024 vs Hè 2025</em><br>Nguồn: The Outbox Vietnam Travel Market Tracker — Summer 2025</p>
   </div>
 
-  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-target"/></svg>Target Audience</h3>
+  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-target"/></svg>Đối tượng mục tiêu</h3>
   <div class="mkt-callout reveal">
-    <p>Young people are the most active and proactive travelers.</p>
-    <p>The 18–24 age group has the highest rate of self-planning, reflecting a preference for organizing and owning their travel experience.</p>
+    <p>Giới trẻ là nhóm khách du lịch năng động và chủ động.</p>
+    <p>Nhóm 18–24 tuổi có tỷ lệ tự lên kế hoạch cao nhất, cho thấy xu hướng ưu tiên tự tổ chức và làm chủ trải nghiệm du lịch.</p>
   </div>
 
-  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-tool"/></svg>Current Solutions</h3>
-  <p class="reveal" style="color:var(--muted);font-size:14px;margin:0 0 14px"><b>Legend:</b> ✓ Supported &nbsp;·&nbsp; △ Partially supported &nbsp;·&nbsp; ✗ Not supported</p>
+  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-tool"/></svg>Giải pháp hiện tại</h3>
+  <p class="reveal" style="color:var(--muted);font-size:14px;margin:0 0 14px"><b>Chú thích:</b> ✓ Hỗ trợ &nbsp;·&nbsp; △ Hỗ trợ một phần &nbsp;·&nbsp; ✗ Không hỗ trợ</p>
   <div class="tablecard reveal" style="overflow-x:auto">
     <table style="min-width:640px">
-      <tr><th>Criteria</th><th>Planning tools<br><span style="font-weight:400;text-transform:none">(Excel / Google Sheets)</span></th><th>Messaging apps<br><span style="font-weight:400;text-transform:none">(Messenger, Zalo)</span></th><th>Bill-splitting apps<br><span style="font-weight:400;text-transform:none">(Tricount, Splitwise)</span></th></tr>
-      <tr><td class="k">Trip planning</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
-      <tr><td class="k">Itinerary management</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
-      <tr><td class="k">Member collaboration</td><td class="gap-p">△</td><td class="gap-y">✓</td><td class="gap-p">△</td></tr>
-      <tr><td class="k">Expense management</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
-      <tr><td class="k">Splitting costs after the trip</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
-      <tr><td class="k">Debt tracking</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
-      <tr><td class="k">Centralized trip management</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
+      <tr><th>Tiêu chí</th><th>Công cụ lập kế hoạch<br><span style="font-weight:400;text-transform:none">(Excel / Google Sheets)</span></th><th>Ứng dụng nhắn tin<br><span style="font-weight:400;text-transform:none">(Mess, Zalo)</span></th><th>Ứng dụng chia chi phí<br><span style="font-weight:400;text-transform:none">(Tricount, Splitwise)</span></th></tr>
+      <tr><td class="k">Lập kế hoạch chuyến đi</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
+      <tr><td class="k">Quản lý lịch trình</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
+      <tr><td class="k">Cộng tác giữa các thành viên</td><td class="gap-p">△</td><td class="gap-y">✓</td><td class="gap-p">△</td></tr>
+      <tr><td class="k">Quản lý chi tiêu</td><td class="gap-y">✓</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
+      <tr><td class="k">Chia chi phí sau chuyến đi</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
+      <tr><td class="k">Theo dõi công nợ</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-y">✓</td></tr>
+      <tr><td class="k">Quản lý tập trung toàn bộ chuyến đi</td><td class="gap-n">✗</td><td class="gap-n">✗</td><td class="gap-n">✗</td></tr>
     </table>
   </div>
-  <p class="reveal" style="color:var(--muted);font-size:14px;font-style:italic;margin:14px 0 0">In other words: no tool does all three — because nobody thought they should be <b style="color:var(--mint-deep)">one thing</b>.</p>
+  <p class="reveal" style="color:var(--muted);font-size:14px;font-style:italic;margin:14px 0 0">Nói cách khác: chưa có công cụ nào làm hết được cả ba việc — vì chưa ai nghĩ chúng nên là <b style="color:var(--mint-deep)">một việc</b>.</p>
 
-  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-flag"/></svg>Market Gap</h3>
+  <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-flag"/></svg>Khoảng trống thị trường (Gap)</h3>
   <div class="mkt-callout reveal">
-    <p>Current solutions mostly address needs individually, while organizing a group trip requires many closely linked activities. This is the gap for building a unified solution that lets users manage the whole journey on one platform.</p>
+    <p>Các giải pháp hiện nay chủ yếu đáp ứng từng nhu cầu riêng lẻ, trong khi việc tổ chức một chuyến du lịch nhóm đòi hỏi nhiều hoạt động có sự liên kết chặt chẽ. Đây là khoảng trống để phát triển một giải pháp thống nhất, giúp người dùng quản lý toàn bộ hành trình trên cùng một nền tảng.</p>
   </div>
 </div></section>
 
@@ -597,41 +597,41 @@
   <svg class="corner-ic ci-2 floaty" style="animation-delay:.3s" aria-hidden="true"><use href="#ic-calendar"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">02</span><h2>User Interview</h2></div>
-  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 24px;max-width:640px">Three people, three different roles in a travel group — but one thing in common: everyone is tired, each for a different reason.</p>
+  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 24px;max-width:640px">Ba người, ba vai trò khác nhau trong một nhóm du lịch — nhưng có một điểm chung: ai cũng mệt vì một lý do khác nhau.</p>
   <div class="people">
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-1.jpg" alt="Đỗ Thị Bích Liên" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-1.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 1 · interview-1.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
-      <h3>Đỗ Thị Bích Liên</h3><div class="age">35 y/o · Chief Accountant</div><div class="role">Leader · The Burdened Organizer</div>
-      <div class="pblock"><div class="lab">Habits</div><p>Plans itineraries and tracks expenses manually on Google Sheets; uses Zalo as the main channel to update the group.</p></div>
-      <div class="pblock"><div class="lab">Pain Points</div><ul>
-        <li>Time-consuming to type each itinerary and expense line into Sheets on a small phone screen.</li>
-        <li>Every update floods the Zalo group, burying important messages.</li>
-        <li>Pressure to collect paper receipts, check bank history, and get the math 100% right at the end of the trip.</li>
+      <h3>Đỗ Thị Bích Liên</h3><div class="age">35 tuổi · Kế toán trưởng</div><div class="role">Leader · Trưởng nhóm gánh vác</div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Lên lịch trình và thống kê chi tiêu thủ công trên Google Sheets; dùng Zalo làm kênh thông báo chính cho cả nhóm.</p></div>
+      <div class="pblock"><div class="lab">Nỗi đau</div><ul>
+        <li>Mất thời gian nhập từng dòng lịch trình và chi phí vào Google Sheets trên màn hình điện thoại nhỏ.</li>
+        <li>Spam tin nhắn nhóm Zalo mỗi lần cập nhật, khiến tin quan trọng bị trôi.</li>
+        <li>Áp lực gom hóa đơn giấy, rà soát lịch sử ngân hàng, tính chính xác 100% khi chuyến đi kết thúc.</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Expectations</div><p>An "all-in-one" app that automates data entry, splitting, and group updates — reducing the need for manual Zalo notifications.</p></div>
-      <p class="quote">"I need one place that handles everything automatically, so I don't have to message on Zalo or calculate every receipt by hand."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một ứng dụng "tất cả trong một" tự động hóa nhập liệu, chia tiền và cập nhật cho nhóm — giảm tải thông báo thủ công qua Zalo.</p></div>
+      <p class="quote">"Tôi cần một chỗ tự động lo hết, đỡ phải nhắn Zalo và tính tay từng hóa đơn."</p>
     </div></div>
 
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-2.jpg" alt="Nguyễn Minh" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-2.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 2 · interview-2.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
-      <h3>Nguyễn Minh</h3><div class="age">27 y/o · Marketing Staff</div><div class="role">Tech-savvy Leader</div>
-      <div class="pblock"><div class="lab">Habits</div><p>Researches multiple sources when planning; budgets in Excel and uses Splitwise to manage debts during the trip.</p></div>
-      <div class="pblock"><div class="lab">Pain Points</div><ul>
-        <li>Tool fragmentation: switching between Excel, Zalo/Messenger, and Splitwise.</li>
-        <li>Disconnected data: expenses in Splitwise don't map back to activities in Excel.</li>
-        <li>Time lost entering small expenses on the go; at the end, must reconcile two platforms and chase each person for payment.</li>
+      <h3>Nguyễn Minh</h3><div class="age">27 tuổi · Nhân viên Marketing</div><div class="role">Tech-savvy Leader</div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Tham khảo nhiều nguồn để lên kế hoạch; dùng Excel dự biên ngân sách và Splitwise để quản lý công nợ khi đi.</p></div>
+      <div class="pblock"><div class="lab">Nỗi đau</div><ul>
+        <li>Phân mảnh công cụ: chuyển qua lại giữa Excel, Zalo/Messenger và Splitwise.</li>
+        <li>Mất kết nối dữ liệu: khoản chi trên Splitwise không biết thuộc hoạt động nào trên Excel.</li>
+        <li>Tốn thời gian nhập khoản lẻ khi đang đi; cuối chuyến phải đối chiếu hai nền tảng và nhắc nợ từng người.</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Expectations</div><p>All trip info in one place. Log expenses quickly, and let the system auto-remind payments after the trip.</p></div>
-      <p class="quote">"I want to stop jumping between Excel, chat, and Splitwise for just one trip."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Mọi thông tin chuyến đi tập trung một nơi. Ghi chi phí nhanh, hệ thống tự nhắc thanh toán sau chuyến.</p></div>
+      <p class="quote">"Tôi muốn hết cảnh nhảy giữa Excel, chat và Splitwise chỉ cho một chuyến đi."</p>
     </div></div>
 
     <div class="person reveal"><div class="avatar" style="padding:0;height:230px"><img class="shot" src="interview-3.jpg" alt="Lê Hạ Lan" style="border-radius:0;border:0" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='interview-3.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{textContent:'Ảnh người 3 · interview-3.jpg/png',style:'padding:40px 12px'}))}"></div><div class="body">
-      <h3>Lê Hạ Lan</h3><div class="age">21 y/o · University Student</div><div class="role">Passive Follower · Dependent Member</div>
-      <div class="pblock"><div class="lab">Habits</div><p>Passively receives info via Zalo/Messenger; transfers a deposit whenever the organizer asks, rarely checks the itinerary or budget herself.</p></div>
-      <div class="pblock"><div class="lab">Pain Points</div><ul>
-        <li>Loses track of information: doesn't know how the group is spending or what tool is being used.</li>
-        <li>Lack of transparency: at the end, only gets a final total, with no way to see what it was actually spent on.</li>
+      <h3>Lê Hạ Lan</h3><div class="age">21 tuổi · Sinh viên Đại học</div><div class="role">Passive Follower · Thành viên phụ thuộc</div>
+      <div class="pblock"><div class="lab">Thói quen</div><p>Nhận thông tin thụ động qua Zalo/Messenger; chuyển khoản cọc theo yêu cầu trưởng nhóm, ít khi tự tìm hiểu lịch trình hay ngân sách.</p></div>
+      <div class="pblock"><div class="lab">Nỗi đau</div><ul>
+        <li>Mất kiểm soát thông tin: không biết nhóm đang chi tiêu ra sao, dùng công cụ gì để ghi nhận.</li>
+        <li>Thiếu minh bạch: cuối chuyến chỉ nhận một con số tổng, không biết mình đã chi cho hoạt động nào, không tự kiểm tra được.</li>
       </ul></div>
-      <div class="pblock"><div class="lab">Expectations</div><p>A shared app to follow the whole itinerary, know her balance in real time, and pay instantly instead of waiting to be reminded.</p></div>
-      <p class="quote">"I just want to see clearly what I owe and for what, and pay it right away — without waiting for anyone to remind me."</p>
+      <div class="pblock"><div class="lab">Kỳ vọng</div><p>Một app chung để theo dõi toàn bộ lịch trình, biết rõ khoản nợ của mình theo thời gian thực và bấm thanh toán ngay thay vì chờ nhắc.</p></div>
+      <p class="quote">"Tôi chỉ muốn thấy rõ mình nợ vì cái gì và trả luôn, khỏi chờ ai nhắc."</p>
     </div></div>
   </div>
 </div></section>
@@ -643,31 +643,31 @@
   <svg class="corner-ic ci-3 floaty" style="animation-delay:.15s" aria-hidden="true"><use href="#ic-palm"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">03</span><h2>User Persona</h2></div>
-  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 24px;max-width:640px">From those three stories, a common persona emerges — the one person almost every friend group has.</p>
+  <p class="reveal" style="color:var(--muted);font-size:15px;font-style:italic;margin:0 0 24px;max-width:640px">Từ ba câu chuyện đó, một chân dung chung hiện ra — người mà rất nhiều nhóm bạn đều có.</p>
   <div class="persona">
     <div class="reveal" style="border-radius:18px;overflow:hidden;border:1px solid var(--line)"><img class="shot" src="persona.jpg" alt="Nguyễn Minh Anh" style="border-radius:0;border:0;width:100%;height:420px;object-fit:cover;display:block" onerror="if(!this.dataset.p){this.dataset.p=1;this.src='persona.png'}else{this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'<div class=ph-t>Ảnh persona</div>Thay bằng ảnh persona<span class=mono>persona.jpg / persona.png</span>',className:'ph',style:'min-height:420px'}))}"></div>
-    <div class="facts reveal"><h3>Nguyễn Minh Anh</h3><div class="tagline">Group Trip Organizer · 28 y/o · Office Worker</div>
+    <div class="facts reveal"><h3>Nguyễn Minh Anh</h3><div class="tagline">Người tổ chức du lịch nhóm · 28 tuổi · Nhân viên văn phòng</div>
       <div class="pg">
         <div class="cell"><h4>🎯 Goals</h4><ul>
-          <li>Manage itinerary, expenses, and debts in one single app.</li>
-          <li>Track spending transparently by activity and by member.</li>
-          <li>Automate the expense summary, splitting, and payment reminders after the trip.</li>
+          <li>Quản lý lịch trình, chi tiêu và công nợ trên một ứng dụng duy nhất.</li>
+          <li>Theo dõi chi phí minh bạch theo từng hoạt động và từng thành viên.</li>
+          <li>Tự động tổng hợp chi phí, chia tiền và nhắc thanh toán sau chuyến đi.</li>
         </ul></div>
         <div class="cell"><h4>😤 Frustrations</h4><ul>
-          <li>Has to use multiple tools: Google Sheets, Zalo/Messenger, and a splitting app.</li>
-          <li>Time lost on manual entry, reconciling expenses, and updates.</li>
-          <li>Members struggle to follow the itinerary and don't know what money went where.</li>
+          <li>Phải dùng nhiều công cụ: Google Sheet, Zalo/Messenger và app chia tiền.</li>
+          <li>Mất thời gian nhập liệu, đối chiếu chi phí, cập nhật thủ công.</li>
+          <li>Thành viên khó theo dõi lịch trình, không biết tiền chi cho hoạt động nào.</li>
         </ul></div>
         <div class="cell"><h4>📱 Behaviors</h4><ul>
-          <li>Usually organizes group trips of 4–8 people.</li>
-          <li>Mainly uses a phone, combined with Google Sheets, Zalo, and an expense app.</li>
-          <li>Habitually checks the budget and updates spending throughout the trip.</li>
+          <li>Thường tổ chức các chuyến du lịch nhóm 4–8 người.</li>
+          <li>Dùng điện thoại là chính, kết hợp Google Sheet, Zalo và app chi tiêu.</li>
+          <li>Có thói quen kiểm tra ngân sách và cập nhật chi tiêu suốt chuyến đi.</li>
         </ul></div>
         <div class="cell"><h4>🧭 Context</h4><ul>
-          <li>Takes on the responsibility of planning for the whole group.</li>
-          <li>Wants to reduce manual work and repetitive notifications.</li>
+          <li>Là người đứng ra gánh vác việc lên kế hoạch cho cả nhóm.</li>
+          <li>Muốn giảm tải công việc thủ công và thông báo lặp đi lặp lại.</li>
         </ul></div>
-        <div class="pquote">"I want all the info about the itinerary, expenses, and payments in one place — instead of managing it across a bunch of different apps."</div>
+        <div class="pquote">"Tôi muốn mọi thông tin về lịch trình, chi tiêu và thanh toán được tập trung ở một nơi thay vì phải quản lý trên nhiều ứng dụng khác nhau."</div>
       </div>
     </div>
   </div>
@@ -679,8 +679,8 @@
   <svg class="corner-ic ci-2 floaty" style="animation-delay:.2s" aria-hidden="true"><use href="#ic-pin"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">04</span><h2>BPMN As-Is</h2></div>
-  <div class="mkt-callout reveal"><p>In short: every task lives in a different place — and every place has its own problem.</p></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">bpmn as-is-english.bpmn</span><span style="color:var(--muted);font-weight:400">drag & scroll to view</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
+  <div class="mkt-callout reveal"><p>Tóm gọn: mỗi việc một chỗ, mỗi chỗ một vấn đề.</p></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">as-is.bpmn</span><span style="color:var(--muted);font-weight:400">kéo & cuộn để xem</span></div><div class="bpmn-canvas" id="viewer-asis"></div></div>
 </div></section>
 
 <!-- 5 -->
@@ -691,9 +691,9 @@
 
   <div class="tablecard reveal" style="padding:22px 26px">
     <ul class="prob-list">
-      <li>Managing a self-organized group trip still relies on <b>multiple tools and manual work</b>.</li>
-      <li><b>Itinerary, members, and expenses</b> are managed across different platforms, causing <b>poor sync, hard tracking, and frequent errors</b>.</li>
-      <li><b>Summarizing costs, settling up, and tracking debts</b> mostly falls on the organizer, increasing their coordination load and lowering overall trip-management efficiency.</li>
+      <li>Quy trình quản lý chuyến du lịch tự túc theo nhóm hiện vẫn phụ thuộc vào <b>nhiều công cụ và thao tác thủ công</b>.</li>
+      <li><b>Lịch trình, thành viên và chi tiêu</b> được quản lý trên các nền tảng khác nhau, dẫn đến <b>thiếu đồng bộ, khó theo dõi và dễ xảy ra sai sót</b>.</li>
+      <li><b>Tổng hợp chi phí, quyết toán và theo dõi công nợ</b> chủ yếu do trưởng nhóm thực hiện, làm tăng khối lượng điều phối và giảm hiệu quả quản lý chuyến đi.</li>
     </ul>
   </div>
 </div></section>
@@ -709,21 +709,21 @@
   <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-idea"/></svg>Solution Concept</h3>
   <div class="tablecard reveal" style="padding:22px 26px;margin-bottom:32px">
     <ul class="prob-list">
-      <li><b>TravelLoop</b> is an <b>all-in-one</b> mobile app that lets self-organized travel groups manage the entire trip on one platform.</li>
-      <li>Integrates: <b>planning, building the itinerary, group collaboration, expense management, and post-trip payments</b>.</li>
-      <li>Optimizes coordination among members, <b>increases transparency</b>, and delivers a <b>seamless travel experience</b>.</li>
+      <li><b>TravelLoop</b> là ứng dụng di động <b>all-in-one</b> hỗ trợ nhóm du lịch tự túc quản lý toàn bộ chuyến đi trên một nền tảng.</li>
+      <li>Tích hợp các tính năng: <b>lên kế hoạch, xây dựng lịch trình, cộng tác nhóm, quản lý chi tiêu và thanh toán sau chuyến đi</b>.</li>
+      <li>Giúp tối ưu phối hợp giữa các thành viên, <b>tăng tính minh bạch trong quản lý</b> và mang lại <b>trải nghiệm du lịch liền mạch</b>.</li>
     </ul>
   </div>
 
   <h3 class="mkt-h3 reveal"><svg aria-hidden="true"><use href="#ic-grid"/></svg>Fit Matrix</h3>
   <div class="tablecard reveal" style="overflow-x:auto">
     <table style="min-width:760px">
-      <tr><th style="width:44px;text-align:center;padding-left:10px;padding-right:10px">No.</th><th>Pain Point</th><th>How the App Solves It</th><th>User Experience</th></tr>
-      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">1</td><td>Itinerary, expenses, and trip info are scattered across many apps.</td><td>Integrates planning, itinerary management, expenses, and payment info into one platform.</td><td>Follow the whole trip conveniently, no need to switch between apps.</td></tr>
-      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">2</td><td>Lots of time spent searching and compiling info to plan a trip.</td><td>Suggests itineraries based on needs and lets users browse community-shared templates.</td><td>Faster planning, easier to find a fitting itinerary, less prep time.</td></tr>
-      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">3</td><td>Manually logging and tracking expenses is slow and error-prone.</td><td>Auto-captures expenses from receipts and manages spending centrally.</td><td>Easier logging, fewer missed entries, easier budget tracking.</td></tr>
-      <tr style="background:var(--sun-soft)"><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">4</td><td><b>Hard to track debts, and awkward to remind members to pay.</b></td><td>Automatically totals costs, splits debts, and sends payment requests with a QR code.</td><td>Transparent, fast payments — less pressure to chase people, fewer conflicts.</td></tr>
-      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">5</td><td>The organizer has to handle almost all planning and coordination.</td><td>All members can update the itinerary, log expenses, and check payment status.</td><td>More collaboration, shared responsibility, and a lighter load for the organizer.</td></tr>
+      <tr><th style="width:44px;text-align:center;padding-left:10px;padding-right:10px">STT</th><th>Pain Point</th><th>Giải pháp tương ứng trong App</th><th>Trải nghiệm người dùng</th></tr>
+      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">1</td><td>Lịch trình, chi tiêu và thông tin chuyến đi nằm trên nhiều ứng dụng khác nhau.</td><td>Tích hợp lập kế hoạch, quản lý lịch trình, chi tiêu và thông tin thanh toán trên một nền tảng duy nhất.</td><td>Theo dõi toàn bộ chuyến đi thuận tiện, không cần chuyển đổi giữa nhiều ứng dụng.</td></tr>
+      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">2</td><td>Mất nhiều thời gian tìm kiếm và tổng hợp thông tin để lập kế hoạch chuyến đi.</td><td>Gợi ý lịch trình theo nhu cầu và cho phép tham khảo các lịch trình do cộng đồng chia sẻ.</td><td>Lên kế hoạch nhanh hơn, dễ tìm được lịch trình phù hợp và giảm thời gian chuẩn bị.</td></tr>
+      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">3</td><td>Ghi chép và quản lý chi tiêu thủ công dễ mất thời gian, quên hoặc sai sót.</td><td>Tự động ghi nhận khoản chi từ hóa đơn và quản lý chi tiêu tập trung.</td><td>Ghi nhận chi tiêu thuận tiện, hạn chế bỏ sót và dễ theo dõi ngân sách.</td></tr>
+      <tr style="background:var(--sun-soft)"><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">4</td><td><b>Khó theo dõi công nợ và ngại nhắc thành viên thanh toán.</b></td><td>Tự động tổng kết chi phí, chia công nợ và gửi thông báo thanh toán kèm mã QR.</td><td>Thanh toán minh bạch, nhanh chóng, giảm áp lực nhắc nợ và hạn chế mâu thuẫn.</td></tr>
+      <tr><td style="width:44px;text-align:center;padding-left:10px;padding-right:10px;font-weight:600;color:var(--navy)">5</td><td>Trưởng nhóm phải đảm nhận hầu hết công việc tổ chức và điều phối.</td><td>Các thành viên cùng tham gia cập nhật lịch trình, ghi nhận chi tiêu và theo dõi trạng thái thanh toán.</td><td>Tăng tính cộng tác, phân chia trách nhiệm và giảm gánh nặng cho trưởng nhóm.</td></tr>
     </table>
   </div>
 </div></section>
@@ -735,7 +735,7 @@
   <svg class="corner-ic ci-4 floaty" style="animation-delay:.25s" aria-hidden="true"><use href="#ic-wave"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">07</span><h2>User Story Map</h2></div>
-  <div class="embed reveal"><iframe title="User Story Map" src="storymap_en.html" style="height:1250px"></iframe></div>
+  <div class="embed reveal"><iframe title="User Story Map" src="https://embed.figma.com/board/ATUrCStKhNOfAw3meIBoa2/TravelLoop_User-Story-Map?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
 </div></section>
 
 <!-- 8 -->
@@ -744,9 +744,9 @@
   <svg class="corner-ic ci-3 floaty" style="animation-delay:.3s;width:40px;height:25px" aria-hidden="true"><use href="#ic-scooter"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">08</span><h2>BPMN To-Be</h2></div>
-  <div class="mkt-callout reveal"><p>In short: everything lives in one place, and the system handles the most tedious part — chasing payments.</p></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">itinerary-to-be-english.bpmn</span><span style="color:var(--muted);font-weight:400">Plan & finalize itinerary</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
-  <div class="bpmn-box reveal"><div class="cap"><span class="mono">expense-to-be-english.bpmn</span><span style="color:var(--muted);font-weight:400">Expenses & splitting</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
+  <div class="mkt-callout reveal"><p>Tóm gọn: mọi việc một chỗ, và hệ thống tự lo phần nhàm chán nhất — nhắc nợ.</p></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-lich-trinh.bpmn</span><span style="color:var(--muted);font-weight:400">Lên & chốt lịch trình</span></div><div class="bpmn-canvas" id="viewer-tobe1"></div></div>
+  <div class="bpmn-box reveal"><div class="cap"><span class="mono">to-be-chi-tieu.bpmn</span><span style="color:var(--muted);font-weight:400">Quản lý chi tiêu & chia tiền</span></div><div class="bpmn-canvas" id="viewer-tobe2"></div></div>
 </div></section>
 
 <!-- 9 -->
@@ -757,15 +757,15 @@
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">09</span><h2>UI Mockup</h2></div>
 
-  <h3 style="font-size:21px;color:var(--navy);margin:0 0 16px">A. Itinerary</h3>
-  <div class="embed reveal"><iframe title="UI Mockup — Itinerary" src="https://embed.figma.com/design/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
-  <p class="reveal" style="color:var(--muted);font-size:13.5px;font-style:italic;margin:10px 0 0">From scattered ideas to one itinerary the whole group agrees on.</p>
-  <p class="hint" style="margin-top:10px"><a class="btn-proto" href="https://www.figma.com/proto/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=0-1" target="_blank" rel="noopener">▶ Run Itinerary prototype</a></p>
+  <h3 style="font-size:21px;color:var(--navy);margin:0 0 16px">A. Lịch trình</h3>
+  <div class="embed reveal"><iframe title="UI Mockup — Lịch trình" src="https://embed.figma.com/design/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=0-1&embed-host=share" allowfullscreen></iframe></div>
+  <p class="reveal" style="color:var(--muted);font-size:13.5px;font-style:italic;margin:10px 0 0">Từ ý tưởng rời rạc thành một lịch trình mà cả nhóm cùng đồng thuận.</p>
+  <p class="hint" style="margin-top:10px"><a class="btn-proto" href="https://www.figma.com/proto/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=0-1" target="_blank" rel="noopener">▶ Chạy prototype Lịch trình</a></p>
 
-  <h3 style="font-size:21px;color:var(--navy);margin:44px 0 16px">B. Expenses</h3>
-  <div class="embed reveal"><iframe title="UI Mockup — Expenses" src="https://embed.figma.com/design/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=406-332&embed-host=share" allowfullscreen></iframe></div>
-  <p class="reveal" style="color:var(--muted);font-size:13.5px;font-style:italic;margin:10px 0 0">Snap a photo, done — nobody has to do the math by hand anymore.</p>
-  <p class="hint" style="margin-top:10px"><a class="btn-proto" href="https://www.figma.com/proto/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=406-332" target="_blank" rel="noopener">▶ Run Expenses prototype</a></p>
+  <h3 style="font-size:21px;color:var(--navy);margin:44px 0 16px">B. Chi tiêu</h3>
+  <div class="embed reveal"><iframe title="UI Mockup — Chi tiêu" src="https://embed.figma.com/design/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=112-1066&embed-host=share" allowfullscreen></iframe></div>
+  <p class="reveal" style="color:var(--muted);font-size:13.5px;font-style:italic;margin:10px 0 0">Chụp một tấm ảnh, xong — không ai phải ngồi tính tay nữa.</p>
+  <p class="hint" style="margin-top:10px"><a class="btn-proto" href="https://www.figma.com/proto/S0Nx1Q4BE24zP1lva1e0eG/TravelLoop?node-id=112-1066" target="_blank" rel="noopener">▶ Chạy prototype Chi tiêu</a></p>
 </div></section>
 
 <!-- 10 -->
@@ -773,15 +773,46 @@
   <svg class="corner-ic ci-2 floaty" style="animation-delay:.15s" aria-hidden="true"><use href="#ic-globe"/></svg>
   <div class="wrap">
   <div class="sec-head reveal"><span class="num">10</span><h2>ERD</h2></div>
-  <p class="reveal" style="color:var(--muted);font-size:14px;font-style:italic;margin:0 0 24px;max-width:640px">This section is for anyone who wants to see how the data is structured under the hood — if you only care about the user experience, feel free to skip it.</p>
-  <div class="embed reveal"><iframe title="ERD" src="erd_en.html" style="height:1300px"></iframe></div>
+  <p class="reveal" style="color:var(--muted);font-size:14px;font-style:italic;margin:0 0 24px;max-width:640px">Phần này dành cho ai muốn nhìn sâu vào cách dữ liệu được tổ chức phía sau — nếu bạn chỉ quan tâm trải nghiệm người dùng, có thể bỏ qua phần này.</p>
+  <div class="embed reveal"><iframe title="ERD" src="erd_full.html" style="height:1050px"></iframe></div>
 
+  <h3 style="font-size:22px;color:var(--navy);margin:44px 0 6px">Bảng quan hệ giữa các bảng</h3>
+  <div class="tablecard reveal" style="overflow-x:auto">
+    <table style="font-size:13.5px;min-width:640px">
+      <tr><th>Bảng cha (1) → Bảng con (N)</th><th>Quan hệ</th><th>Ý nghĩa</th></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → THANH_VIEN_LT.MaTK</td><td>1–N</td><td>Một người tham gia nhiều chuyến</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → THANH_VIEN_LT.MaLT</td><td>1–N</td><td>Một chuyến có nhiều thành viên</td></tr>
+      <tr><td class="mono">VAI_TRO.MaVT → THANH_VIEN_LT.MaVT</td><td>1–N</td><td>Một vai trò gán cho nhiều thành viên</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → LICH_TRINH.MaTK</td><td>1–N</td><td>Một người tạo nhiều lịch trình</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → HOAT_DONG.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều hoạt động</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → KHOAN_CHI.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều khoản chi</td></tr>
+      <tr><td class="mono">HOAT_DONG.MaHD → KHOAN_CHI.MaHD</td><td>1–N</td><td>Một hoạt động gắn nhiều khoản chi</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → KHOAN_CHI.MaTK_nguoi_chi</td><td>1–N</td><td>Một người chi nhiều khoản</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → CHITIET_CHIA.MaKC</td><td>1–N</td><td>Một khoản chi chia cho nhiều người</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CHITIET_CHIA.MaTK</td><td>1–N</td><td>Một người tham gia nhiều khoản chia</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → COMMENT.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều comment</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → COMMENT.MaKC</td><td>1–N</td><td>Một khoản chi có nhiều góp ý</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → COMMENT.MaTK</td><td>1–N</td><td>Một người viết nhiều comment</td></tr>
+      <tr><td class="mono">KHOAN_CHI.MaKC → CONG_NO.MaKC</td><td>1–N</td><td>Một khoản chi phát sinh nhiều công nợ (nullable — null nếu nợ đã rút gọn/netting)</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK_no</td><td>1–N</td><td>Một người có nhiều khoản nợ (người phải trả)</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → CONG_NO.MaTK_cho_no</td><td>1–N</td><td>Một người có nhiều khoản được nhận nợ (chủ nợ, dùng khi rút gọn nợ)</td></tr>
+      <tr><td class="mono">CONG_NO.MaCN → NHAC_NO.MaCN</td><td>1–N</td><td>Một công nợ bị nhắc nhiều lần</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → XAC_NHAN.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều lượt xác nhận</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → XAC_NHAN.MaTK</td><td>1–N</td><td>Một người xác nhận nhiều lần</td></tr>
+      <tr><td class="mono">LICH_TRINH.MaLT → LINK_CHIA_SE.MaLT</td><td>1–N</td><td>Một lịch trình có nhiều link chia sẻ</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → THONG_BAO.MaTK</td><td>1–N</td><td>Một người nhận nhiều thông báo</td></tr>
+      <tr><td class="mono">LICH_TRINH_MAU.MaMau → HOAT_DONG_MAU.MaMau</td><td>1–N</td><td>Một mẫu có nhiều hoạt động mẫu</td></tr>
+      <tr><td class="mono">TAI_KHOAN.MaTK → LICH_TRINH_MAU.MaTK_tac_gia</td><td>1–N</td><td>Một người đăng nhiều mẫu (tác giả)</td></tr>
+      <tr><td class="mono">LICH_TRINH_MAU.MaMau → LICH_TRINH.MaMau_nguon</td><td>1–N</td><td>Một mẫu được dùng để tạo ra nhiều lịch trình (nullable — null nếu tự tạo, không dùng mẫu)</td></tr>
+    </table>
+  </div>
+  <p class="hint">Hai quan hệ <b>N–N</b> ẩn được hiện thực qua bảng nối: <b>TAI_KHOAN ↔ LICH_TRINH</b> (qua THANH_VIEN_LT) và <b>KHOAN_CHI ↔ TAI_KHOAN</b> (qua CHITIET_CHIA). LICH_TRINH_MAU/HOAT_DONG_MAU là bảng snapshot tĩnh, tách biệt hoàn toàn khỏi thành viên/công nợ/comment thật để bảo vệ riêng tư khi công khai làm mẫu.</p>
 </div></section>
 
 <div class="final-cta">
-  <h2>Ready for a trip where nobody has to play debt collector?</h2>
-  <p>Travel together, settle fairly — so your trip leaves behind good memories, not money drama.</p>
-  <a class="btn btn-primary" href="#market">Start from the top →</a>
+  <h2>Sẵn sàng cho chuyến đi tiếp theo mà không ai phải làm người đòi nợ?</h2>
+  <p>Đi cùng nhau, tính sòng phẳng — để chuyến đi chỉ để lại kỷ niệm vui, không phải drama tiền bạc.</p>
+  <a class="btn btn-primary" href="#market">Bắt đầu từ đầu →</a>
 </div>
 
 <footer>
@@ -797,11 +828,11 @@
     const el=document.getElementById(id);
     try{const r=await fetch(url);if(!r.ok)throw 0;const xml=await r.text();
       const v=new BpmnJS({container:'#'+id});await v.importXML(xml);v.get('canvas').zoom('fit-viewport','auto');
-    }catch(e){el.innerHTML='<div style="display:flex;height:100%;align-items:center;justify-content:center;color:#5d7880;font-size:14px;text-align:center;padding:24px">Could not load <code style="margin:0 5px">'+url+'</code> — place the .bpmn file in the same folder and reload the page.</div>';}
+    }catch(e){el.innerHTML='<div style="display:flex;height:100%;align-items:center;justify-content:center;color:#5d7880;font-size:14px;text-align:center;padding:24px">Chưa tải được <code style="margin:0 5px">'+url+'</code> — đặt file .bpmn cùng thư mục rồi tải lại trang.</div>';}
   }
-  renderBpmn('viewer-asis','bpmn%20as-is-english.bpmn');
-  renderBpmn('viewer-tobe1','itinerary-to-be-english.bpmn');
-  renderBpmn('viewer-tobe2','expense-to-be-english.bpmn');
+  renderBpmn('viewer-asis','as-is.bpmn');
+  renderBpmn('viewer-tobe1','to-be-lich-trinh.bpmn');
+  renderBpmn('viewer-tobe2','to-be-chi-tieu.bpmn');
 </script>
 </body>
 </html>
